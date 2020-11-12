@@ -1,0 +1,202 @@
+{
+  "modelVersion" : 1,
+  "sources" : [ {
+    "sourceType" : "repository",
+    "id" : "nwis-cancer-mdt",
+    "user" : "freshehr",
+    "repositoryId" : "nwis-cancer-mdt"
+  } ],
+  "entries" : [ {
+    "path" : "Templates/ReSPECT-3.v0.t.json",
+    "type" : "template",
+    "id" : "ReSPECT-3.v0",
+    "sourceId" : "nwis-cancer-mdt",
+    "lastModified" : "2020-10-01T09:23:25.312Z",
+    "dependsOn" : [ {
+      "type" : "archetype",
+      "reference" : "openEHR-EHR-SECTION.adhoc.v1"
+    }, {
+      "type" : "archetype",
+      "reference" : "openEHR-EHR-EVALUATION.clinical_synopsis.v1"
+    }, {
+      "type" : "archetype",
+      "reference" : "openEHR-EHR-EVALUATION.advance_care_directive.v1"
+    }, {
+      "type" : "archetype",
+      "reference" : "openEHR-EHR-ADMIN_ENTRY.care_team.v0"
+    }, {
+      "type" : "archetype",
+      "reference" : "openEHR-EHR-CLUSTER.telecom_cc.v0"
+    }, {
+      "type" : "archetype",
+      "reference" : "openEHR-EHR-CLUSTER.participation_rm.v0"
+    }, {
+      "type" : "archetype",
+      "reference" : "openEHR-EHR-EVALUATION.about_me.v0"
+    }, {
+      "type" : "archetype",
+      "reference" : "openEHR-EHR-CLUSTER.contact_cc.v0"
+    }, {
+      "type" : "archetype",
+      "reference" : "openEHR-EHR-EVALUATION.cpr_decision_uk.v0"
+    }, {
+      "type" : "archetype",
+      "reference" : "openEHR-EHR-CLUSTER.xds_metadata.v0"
+    }, {
+      "type" : "archetype",
+      "reference" : "openEHR-EHR-ACTION.service.v0"
+    }, {
+      "type" : "archetype",
+      "reference" : "openEHR-EHR-EVALUATION.mental_capacity.v0"
+    }, {
+      "type" : "archetype",
+      "reference" : "openEHR-EHR-CLUSTER.care_team.v0"
+    }, {
+      "type" : "archetype",
+      "reference" : "openEHR-EHR-COMPOSITION.report.v1"
+    }, {
+      "type" : "archetype",
+      "reference" : "openEHR-EHR-CLUSTER.name_cc.v0"
+    }, {
+      "type" : "archetype",
+      "reference" : "openEHR-EHR-ADMIN_ENTRY.respect_involvement.v0"
+    }, {
+      "type" : "archetype",
+      "reference" : "openEHR-EHR-SECTION.respect_headings.v0"
+    }, {
+      "type" : "archetype",
+      "reference" : "openEHR-EHR-EVALUATION.recommendation.v1"
+    }, {
+      "type" : "archetype",
+      "reference" : "openEHR-EHR-SECTION.ehr_reference.v0"
+    }, {
+      "type" : "archetype",
+      "reference" : "openEHR-EHR-ADMIN_ENTRY.legal_authority.v0"
+    } ]
+  }, {
+    "path" : "Templates/ReSPECT-3.v0.opt",
+    "type" : "opt",
+    "id" : "ReSPECT-3.v0",
+    "lastModified" : "2020-10-01T09:23:25.313Z"
+  }, {
+    "path" : "Archetypes/openEHR-EHR-SECTION.adhoc.v1.adl",
+    "type" : "archetype",
+    "id" : "openEHR-EHR-SECTION.adhoc.v1",
+    "sourceId" : "nwis-cancer-mdt",
+    "lastModified" : "2020-06-29T11:05:20.496Z"
+  }, {
+    "path" : "Archetypes/openEHR-EHR-EVALUATION.clinical_synopsis.v1.adl",
+    "type" : "archetype",
+    "id" : "openEHR-EHR-EVALUATION.clinical_synopsis.v1",
+    "sourceId" : "nwis-cancer-mdt",
+    "lastModified" : "2020-06-25T08:01:12.762Z"
+  }, {
+    "path" : "Archetypes/openEHR-EHR-EVALUATION.advance_care_directive.v1.adl",
+    "type" : "archetype",
+    "id" : "openEHR-EHR-EVALUATION.advance_care_directive.v1",
+    "sourceId" : "nwis-cancer-mdt",
+    "lastModified" : "2020-06-12T16:32:05.377Z"
+  }, {
+    "path" : "Archetypes/openEHR-EHR-ADMIN_ENTRY.care_team.v0.adl",
+    "type" : "archetype",
+    "id" : "openEHR-EHR-ADMIN_ENTRY.care_team.v0",
+    "sourceId" : "nwis-cancer-mdt",
+    "lastModified" : "2020-06-25T08:11:03.123Z"
+  }, {
+    "path" : "Archetypes/openEHR-EHR-CLUSTER.telecom_cc.v0.adl",
+    "type" : "archetype",
+    "id" : "openEHR-EHR-CLUSTER.telecom_cc.v0",
+    "sourceId" : "nwis-cancer-mdt",
+    "lastModified" : "2020-06-25T08:11:03.131Z"
+  }, {
+    "path" : "Archetypes/openEHR-EHR-CLUSTER.participation_rm.v0.adl",
+    "type" : "archetype",
+    "id" : "openEHR-EHR-CLUSTER.participation_rm.v0",
+    "sourceId" : "nwis-cancer-mdt",
+    "lastModified" : "2020-08-13T10:58:32.400Z"
+  }, {
+    "path" : "Archetypes/openEHR-EHR-EVALUATION.about_me.v0.adl",
+    "type" : "archetype",
+    "id" : "openEHR-EHR-EVALUATION.about_me.v0",
+    "sourceId" : "nwis-cancer-mdt",
+    "lastModified" : "2020-07-17T09:29:16.076Z"
+  }, {
+    "path" : "Archetypes/openEHR-EHR-CLUSTER.contact_cc.v0.adl",
+    "type" : "archetype",
+    "id" : "openEHR-EHR-CLUSTER.contact_cc.v0",
+    "sourceId" : "nwis-cancer-mdt",
+    "lastModified" : "2020-07-15T14:33:31.359Z"
+  }, {
+    "path" : "Archetypes/openEHR-EHR-EVALUATION.cpr_decision_uk.v0.adl",
+    "type" : "archetype",
+    "id" : "openEHR-EHR-EVALUATION.cpr_decision_uk.v0",
+    "sourceId" : "nwis-cancer-mdt",
+    "lastModified" : "2020-07-17T09:29:16.076Z"
+  }, {
+    "path" : "Archetypes/openEHR-EHR-CLUSTER.xds_metadata.v0.adl",
+    "type" : "archetype",
+    "id" : "openEHR-EHR-CLUSTER.xds_metadata.v0",
+    "sourceId" : "nwis-cancer-mdt",
+    "lastModified" : "2020-07-15T14:33:31.023Z"
+  }, {
+    "path" : "Archetypes/openEHR-EHR-ACTION.service.v0.adl",
+    "type" : "archetype",
+    "id" : "openEHR-EHR-ACTION.service.v0",
+    "sourceId" : "nwis-cancer-mdt",
+    "lastModified" : "2020-06-25T12:49:18.342Z"
+  }, {
+    "path" : "Archetypes/openEHR-EHR-EVALUATION.mental_capacity.v0.adl",
+    "type" : "archetype",
+    "id" : "openEHR-EHR-EVALUATION.mental_capacity.v0",
+    "sourceId" : "nwis-cancer-mdt",
+    "lastModified" : "2020-07-17T09:29:16.076Z"
+  }, {
+    "path" : "Archetypes/openEHR-EHR-CLUSTER.care_team.v0.adl",
+    "type" : "archetype",
+    "id" : "openEHR-EHR-CLUSTER.care_team.v0",
+    "sourceId" : "nwis-cancer-mdt",
+    "lastModified" : "2020-06-25T08:11:03.131Z"
+  }, {
+    "path" : "Archetypes/openEHR-EHR-COMPOSITION.report.v1.adl",
+    "type" : "archetype",
+    "id" : "openEHR-EHR-COMPOSITION.report.v1",
+    "sourceId" : "nwis-cancer-mdt",
+    "lastModified" : "2020-06-29T11:05:20.496Z"
+  }, {
+    "path" : "Archetypes/openEHR-EHR-CLUSTER.name_cc.v0.adl",
+    "type" : "archetype",
+    "id" : "openEHR-EHR-CLUSTER.name_cc.v0",
+    "sourceId" : "nwis-cancer-mdt",
+    "lastModified" : "2020-06-25T08:11:03.131Z"
+  }, {
+    "path" : "Archetypes/openEHR-EHR-ADMIN_ENTRY.respect_involvement.v0.adl",
+    "type" : "archetype",
+    "id" : "openEHR-EHR-ADMIN_ENTRY.respect_involvement.v0",
+    "sourceId" : "nwis-cancer-mdt",
+    "lastModified" : "2020-07-17T09:29:16.076Z"
+  }, {
+    "path" : "Archetypes/openEHR-EHR-SECTION.respect_headings.v0.adl",
+    "type" : "archetype",
+    "id" : "openEHR-EHR-SECTION.respect_headings.v0",
+    "sourceId" : "nwis-cancer-mdt",
+    "lastModified" : "2020-07-17T09:29:16.076Z"
+  }, {
+    "path" : "Archetypes/openEHR-EHR-EVALUATION.recommendation.v1.adl",
+    "type" : "archetype",
+    "id" : "openEHR-EHR-EVALUATION.recommendation.v1",
+    "sourceId" : "nwis-cancer-mdt",
+    "lastModified" : "2020-06-25T08:11:03.131Z"
+  }, {
+    "path" : "Archetypes/openEHR-EHR-SECTION.ehr_reference.v0.adl",
+    "type" : "archetype",
+    "id" : "openEHR-EHR-SECTION.ehr_reference.v0",
+    "sourceId" : "nwis-cancer-mdt",
+    "lastModified" : "2020-07-17T09:29:16.076Z"
+  }, {
+    "path" : "Archetypes/openEHR-EHR-ADMIN_ENTRY.legal_authority.v0.adl",
+    "type" : "archetype",
+    "id" : "openEHR-EHR-ADMIN_ENTRY.legal_authority.v0",
+    "sourceId" : "nwis-cancer-mdt",
+    "lastModified" : "2020-07-17T09:29:16.076Z"
+  } ]
+}
