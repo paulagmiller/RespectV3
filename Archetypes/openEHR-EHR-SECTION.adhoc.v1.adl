@@ -54,6 +54,12 @@ description
 			copyright = <"© openEHR Foundation">
 			use = <"используется для создания и именования разделов в локальных шаблонах">
 		>
+		["nb"] = <
+			language = <[ISO_639-1::nb]>
+			purpose = <"Brukes som en generisk seksjonsheading som kan gis nytt navn i en template for å passe i en gitt klinisk kontekst.">
+			use = <"Brukes til å lage en seksjonsheading i en template, hvis navn deretter endres for å passe i den aktuelle kliniske konteksten. For eksempel: \"Ad hoc heading\" endret til \"Funn ved undersøkelse\"">
+			misuse = <"Skal ikke stå med uendret navn i en template.">
+		>
 		["es-ar"] = <
 			language = <[ISO_639-1::es-ar]>
 			purpose = <"Proporcionar un encabezado de sección de tipo genérico que será renombrado en una plantilla para su empleo en un contexto clínico específico.">
@@ -61,11 +67,12 @@ description
 			use = <"Utilizar para construir un encabezado de sección en una plantilla y que será renombrado para su empleo en un contexto clínico específico. Por ejemplo, \"Encabezado ad hoc\" puede renombrarse como \"Hallazgos de examen\".">
 			misuse = <"No debe mantenerse sin cambios en una plantilla.">
 		>
-		["nb"] = <
-			language = <[ISO_639-1::nb]>
-			purpose = <"Brukes som en generisk seksjonsheading som kan gis nytt navn i en template for å passe i en gitt klinisk kontekst.">
-			use = <"Brukes til å lage en seksjonsheading i en template, hvis navn deretter endres for å passe i den aktuelle kliniske konteksten. For eksempel: \"Ad hoc heading\" endret til \"Funn ved undersøkelse\"">
-			misuse = <"Skal ikke stå med uendret navn i en template.">
+		["sl"] = <
+			language = <[ISO_639-1::sl]>
+			purpose = <"*To provide a generic section header which will be renamed in a template to suit a specific clinical context.(en)">
+			copyright = <"© openEHR Foundation">
+			use = <"*Use to construct a section heading in a template that will be renamed to suit the specific clinical context. For example: \"Ad hoc heading\" renamed to \"Examination findings\".(en)">
+			misuse = <"*Not to be left unchanged in a template.(en)">
 		>
 		["en"] = <
 			language = <[ISO_639-1::en]>
@@ -73,13 +80,6 @@ description
 			copyright = <"© openEHR Foundation">
 			use = <"Use to construct a section heading in a template that will be renamed to suit the specific clinical context. For example: \"Ad hoc heading\" renamed to \"Examination findings\".">
 			misuse = <"Not to be left unchanged in a template.">
-		>
-		["sl"] = <
-			language = <[ISO_639-1::sl]>
-			purpose = <"*To provide a generic section header which will be renamed in a template to suit a specific clinical context.(en)">
-			copyright = <"© openEHR Foundation">
-			use = <"*Use to construct a section heading in a template that will be renamed to suit the specific clinical context. For example: \"Ad hoc heading\" renamed to \"Examination findings\".(en)">
-			misuse = <"*Not to be left unchanged in a template.(en)">
 		>
 	>
 	other_details = <
