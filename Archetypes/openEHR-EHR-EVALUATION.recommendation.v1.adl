@@ -79,14 +79,6 @@ Zum Beispiel als Bestandteil der Schlussfolgerungen, die im Rahmen einer klinisc
 
 Är tänkt att ge stöd för att dokumentera en behandlingsrekommendation vid en specifik tidpunkt. Exempelvis som en del av slutsatsen vid en klinisk konsultation.">
 		>
-		["es-ar"] = <
-			language = <[ISO_639-1::es-ar]>
-			purpose = <"Para el registro de una sugerencia, consejo o propuesta para el manejo clínico en un momento determinado.">
-			keywords = <"consejo","propuesta","sugerencia">
-			use = <"Utilícese para registrar una sugerencia, consejo o propuesta para el manejo clínico en un momento específico.
-
-El caso de uso previsto se vincula a permitir el registro por parte del clínico de una o mas recomendaciones, en un mento específico en el tiempo. Por ejemplo, como un componente de las conclusiones a las que se ha arribado como parte de una consutla clínica.">
-		>
 		["nb"] = <
 			language = <[ISO_639-1::nb]>
 			purpose = <"Anvendes for å registrere et forslag, et råd eller en anmodning om klinisk oppfølging på et spesifikt tidspunkt.">
@@ -95,6 +87,14 @@ El caso de uso previsto se vincula a permitir el registro por parte del clínico
 
 Arketypen er ment å understøtte klinikere som dokumenterer en eller flere anbefalinger på et spesifikt tidspunkt.
 Anbefalingen kan for eksempel benyttes som en del av dokumentasjonen av konklusjonene som trekkes i forbindelse med en klinisk konsultasjon.">
+		>
+		["es-ar"] = <
+			language = <[ISO_639-1::es-ar]>
+			purpose = <"Para el registro de una sugerencia, consejo o propuesta para el manejo clínico en un momento determinado.">
+			keywords = <"consejo","propuesta","sugerencia">
+			use = <"Utilícese para registrar una sugerencia, consejo o propuesta para el manejo clínico en un momento específico.
+
+El caso de uso previsto se vincula a permitir el registro por parte del clínico de una o mas recomendaciones, en un mento específico en el tiempo. Por ejemplo, como un componente de las conclusiones a las que se ha arribado como parte de una consutla clínica.">
 		>
 		["pt-br"] = <
 			language = <[ISO_639-1::pt-br]>
