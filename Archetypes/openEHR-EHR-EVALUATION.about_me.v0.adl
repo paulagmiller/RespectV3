@@ -1,4 +1,4 @@
-archetype (adl_version=1.4; uid=09227df9-6098-4428-9b08-f7cb9582435a)
+archetype (adl_version=1.4; uid=7791e768-0e2b-4629-9ab4-67c53a478b66)
 	openEHR-EHR-EVALUATION.about_me.v0
 
 concept
@@ -14,21 +14,23 @@ description
 		["organisation"] = <"freshEHR Clinical Informatics Ltd.">
 		["email"] = <"ian@freshehr.com">
 	>
-	lifecycle_state = <"unmanaged">
+	lifecycle_state = <"in_development">
 	details = <
 		["en"] = <
 			language = <[ISO_639-1::en]>
 			purpose = <"A place to record narrative text about a person's important information for their care,">
+			copyright = <"© Apperta Foundation">
 		>
 	>
 	other_details = <
-		["licence"] = <"This work is licensed under the Creative Commons Attribution-ShareAlike 4.0 International License. To view a copy of this license, visit http://creativecommons.org/licenses/by-sa/4.0/.">
-		["custodian_organisation"] = <"openEHR Foundation">
-		["original_namespace"] = <"org.openehr">
-		["original_publisher"] = <"openEHR Foundation">
-		["custodian_namespace"] = <"org.openehr">
-		["MD5-CAM-1.0.1"] = <"0ee7eecb3f3b5872f20849d2e2641c07">
-		["build_uid"] = <"52f83df3-c013-3fcd-b9e0-aa3d152d49ef">
+		["licence"] = <"This work is licensed under the Creative Commons Attribution-ShareAlike 4.0 License. To view a copy of this license, visit http://creativecommons.org/licenses/by-sa/4.0/.">
+		["custodian_organisation"] = <"Apperta UK">
+		["original_namespace"] = <"uk.org.clinicalmodels">
+		["original_publisher"] = <"Apperta UK">
+		["custodian_namespace"] = <"uk.org.clinicalmodels">
+		["MD5-CAM-1.0.1"] = <"ADEAE3713312A7C00440EAA7B3BA2CAD">
+		["build_uid"] = <"7d297b96-cd1e-4eb6-975b-b9b400882b27">
+		["revision"] = <"0.0.1-alpha">
 	>
 
 definition
