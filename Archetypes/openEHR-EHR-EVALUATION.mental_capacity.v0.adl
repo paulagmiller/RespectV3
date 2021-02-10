@@ -1,4 +1,4 @@
-archetype (adl_version=1.4; uid=2275acea-1919-44d6-a342-42e6b5c77185)
+archetype (adl_version=1.4; uid=0d44dfae-4e46-4f67-a6d5-f129e16903c0)
 	openEHR-EHR-EVALUATION.mental_capacity.v0
 
 concept
@@ -21,24 +21,24 @@ description
 			language = <[ISO_639-1::en]>
 			purpose = <"To record details about the ability of an individual to use and understand information to make a decision or plan.">
 			keywords = <"mental, capacity, competency, competent, decision", ...>
-			copyright = <"© openEHR Foundation">
+			copyright = <"© openEHR Foundation, Apperta Foundation">
 			use = <"Use to record details about the ability of an individual to use and understand information to make a decision or plan.
 
 This archetype is intended to capture information about the mental capacity status of an individual, which is typically assessed in relation to a specific decision or plan that needs to be made about their medical care or treatment at a particular time. If specific details about the mental capacity assessments are required, additional archetypes can be nested within the 'Assessment details' SLOT.">
 		>
 	>
 	other_details = <
-		["licence"] = <"This work is licensed under the Creative Commons Attribution-ShareAlike 4.0 International License. To view a copy of this license, visit http://creativecommons.org/licenses/by-sa/4.0/.">
-		["custodian_organisation"] = <"openEHR Foundation">
+		["licence"] = <"This work is licensed under the Creative Commons Attribution-ShareAlike 4.0 License. To view a copy of this license, visit http://creativecommons.org/licenses/by-sa/4.0/.">
+		["custodian_organisation"] = <"Apperta UK">
 		["references"] = <"Think Capacity, Think Consent [Internet]. NHS Education for Scotland. 2020 [cited 2020 May 12]. Available from: https://www.nes.scot.nhs.uk/media/1557644/capacity_and_consent-interactive.pdf
 
 What is capacity? [Internet]. Compassion in Dying. 2020 [cited 2020 May 12]. Available from: https://compassionindying.org.uk/making-decisions-and-planning-your-care/treatment-care-decisions/about-capacity/.">
 		["current_contact"] = <"Heidi Koikkalainen, heidi@freshehr.com">
-		["original_namespace"] = <"org.openehr">
-		["original_publisher"] = <"openEHR Foundation">
-		["custodian_namespace"] = <"org.openehr">
-		["MD5-CAM-1.0.1"] = <"620800b074a2881098af693c9b291425">
-		["build_uid"] = <"28449b8b-e69b-4659-bf36-a7c4592c2861">
+		["original_namespace"] = <"uk.org.clinicalmodels">
+		["original_publisher"] = <"Apperta UK">
+		["custodian_namespace"] = <"uk.org.clinicalmodels">
+		["MD5-CAM-1.0.1"] = <"B1380ED5FEA8726AC3FE796219147054">
+		["build_uid"] = <"8928acca-a536-48ad-8350-2869f498f29d">
 		["revision"] = <"0.0.1-alpha">
 	>
 
