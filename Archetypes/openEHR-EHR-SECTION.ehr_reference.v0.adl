@@ -18,6 +18,7 @@ description
 	details = <
 		["en"] = <
 			language = <[ISO_639-1::en]>
+			purpose = <"Being used as a section divider in ReSPECT">
 		>
 	>
 	other_details = <
@@ -26,7 +27,7 @@ description
 		["original_namespace"] = <"org.openehr">
 		["original_publisher"] = <"openEHR Foundation">
 		["custodian_namespace"] = <"org.openehr">
-		["MD5-CAM-1.0.1"] = <"21dda5489861404f0a8c2a92440f108a">
+		["MD5-CAM-1.0.1"] = <"17d72fa7638b4d83364a1ae9a5f93d3b">
 		["build_uid"] = <"48390fc4-1c9c-32a8-9947-7df46dbfd4cf">
 	>
 
