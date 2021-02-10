@@ -28,7 +28,7 @@
       "Sign off" : "",
       "Speciality" : "",
       "User roles" : "",
-      "MD5-CAM-1.0.1" : "4fe1b4db2a84950445f511da920100be",
+      "MD5-CAM-1.0.1" : "0b63e5bb9d15dc607c2f87c7b2bcf83b",
       "PARENT:MD5-CAM-1.0.1" : "FD053BE0456D849CACD864F274EED32E",
       "Template semVer" : "0.2.0",
       "ReSPECT Version" : "3.0.0-published"
@@ -986,7 +986,7 @@
       "references" : { },
       "conversionDetails" : { },
       "otherDetails" : {
-        "PARENT:MD5-CAM-1.0.1" : "40CBAF5A01D32E8917DDDFD752562AF4"
+        "PARENT:MD5-CAM-1.0.1" : "E37E04B211256676D357F175E28E71C6"
       },
       "details" : {
         "en" : {
