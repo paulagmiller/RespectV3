@@ -1,4 +1,4 @@
-archetype (adl_version=1.4; uid=abe1575f-645c-4e59-a158-4cd81e9bae96)
+archetype (adl_version=1.4; uid=54134d5a-b509-43bb-80f1-f6b66c17fc53)
 	openEHR-EHR-SECTION.ehr_reference.v0
 
 concept
@@ -14,21 +14,23 @@ description
 		["organisation"] = <"freshEHR Clinical Informatics Ltd.">
 		["email"] = <"ian@freshehr.com">
 	>
-	lifecycle_state = <"unmanaged">
+	lifecycle_state = <"in_development">
 	details = <
 		["en"] = <
 			language = <[ISO_639-1::en]>
 			purpose = <"Being used as a section divider in ReSPECT">
+			copyright = <"© Apperta Foundation">
 		>
 	>
 	other_details = <
-		["licence"] = <"This work is licensed under the Creative Commons Attribution-ShareAlike 4.0 International License. To view a copy of this license, visit http://creativecommons.org/licenses/by-sa/4.0/.">
-		["custodian_organisation"] = <"openEHR Foundation">
-		["original_namespace"] = <"org.openehr">
-		["original_publisher"] = <"openEHR Foundation">
-		["custodian_namespace"] = <"org.openehr">
-		["MD5-CAM-1.0.1"] = <"21dda5489861404f0a8c2a92440f108a">
-		["build_uid"] = <"48390fc4-1c9c-32a8-9947-7df46dbfd4cf">
+		["licence"] = <"This work is licensed under the Creative Commons Attribution-ShareAlike 4.0 License. To view a copy of this license, visit http://creativecommons.org/licenses/by-sa/4.0/.">
+		["custodian_organisation"] = <"Apperta UK">
+		["original_namespace"] = <"uk.org.clinicalmodels">
+		["original_publisher"] = <"Apperta UK">
+		["custodian_namespace"] = <"uk.org.clinicalmodels">
+		["MD5-CAM-1.0.1"] = <"8BA689EAFD659F82F338978DA0D52814">
+		["build_uid"] = <"cc3ad1bb-fbc5-4b58-9540-84afd2556245">
+		["revision"] = <"0.0.1-alpha">
 	>
 
 definition
