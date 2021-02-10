@@ -18,6 +18,7 @@ description
 	details = <
 		["en"] = <
 			language = <[ISO_639-1::en]>
+			purpose = <"A place to record narrative text about a person's important information for their care,">
 		>
 	>
 	other_details = <
@@ -26,7 +27,7 @@ description
 		["original_namespace"] = <"org.openehr">
 		["original_publisher"] = <"openEHR Foundation">
 		["custodian_namespace"] = <"org.openehr">
-		["MD5-CAM-1.0.1"] = <"e8b9280da9361e04398c3389fb19298f">
+		["MD5-CAM-1.0.1"] = <"0ee7eecb3f3b5872f20849d2e2641c07">
 		["build_uid"] = <"52f83df3-c013-3fcd-b9e0-aa3d152d49ef">
 	>
 
