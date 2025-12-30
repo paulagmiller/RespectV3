@@ -1,4 +1,4 @@
-archetype (adl_version=1.4; uid=7ec3d7ad-c115-4211-9795-c1a8bd3c1aa3)
+archetype (adl_version=1.4; uid=b6ae7abc-a096-4943-a805-1d2e1823658e)
 	openEHR-EHR-CLUSTER.contact_cc.v0
 
 concept
@@ -19,7 +19,7 @@ description
 		["en"] = <
 			language = <[ISO_639-1::en]>
 			purpose = <"For the purpose of capturing patient amd organisation contact information.">
-			copyright = <"© Apperta Foundation">
+			copyright = <"© Apperta Foundation, NHS Education for Scotland">
 			use = <"Use to record patient contact information in line with the corresponding FHIR resource.
 
 The slots for name, telecom, organisation and address should be filled with the appropriate FHIR resource-aligned cluster archetypes.">
@@ -28,14 +28,16 @@ The slots for name, telecom, organisation and address should be filled with the 
 	>
 	other_details = <
 		["licence"] = <"This work is licensed under the Creative Commons Attribution-ShareAlike 3.0 License. To view a copy of this license, visit http://creativecommons.org/licenses/by-sa/3.0/.">
-		["custodian_organisation"] = <"Apperta UK">
-		["references"] = <"https://fhir.hl7.org.uk/STU3/StructureDefinition/CareConnect-Patient-1 cited 19-Jul-2018.">
+		["custodian_organisation"] = <"NHS Education for Scotland">
+		["references"] = <"Derived from: <Add reference to original resource here>
+
+https://fhir.hl7.org.uk/STU3/StructureDefinition/CareConnect-Patient-1 cited 19-Jul-2018.">
 		["current_contact"] = <"Hildegard McNicoll, freshEHR Clinical Informatics Ltd.<hildi@freshehr.com>">
-		["original_namespace"] = <"uk.org.clinicalmodels">
-		["original_publisher"] = <"Apperta UK">
-		["custodian_namespace"] = <"uk.org.clinicalmodels">
-		["MD5-CAM-1.0.1"] = <"A92FD95229E77F51F656499514C2F522">
-		["build_uid"] = <"b8c22650-2ea2-4da8-a4f1-73970b2a83f4">
+		["original_namespace"] = <"scot.nhs.models">
+		["original_publisher"] = <"NHS Education for Scotland">
+		["custodian_namespace"] = <"scot.nhs.models">
+		["MD5-CAM-1.0.1"] = <"4BCF2296C45B8A5C47714833BB61BB7B">
+		["build_uid"] = <"9654c51c-4637-4c89-b7c3-36893f9beebc">
 		["revision"] = <"0.0.1-alpha">
 	>
 
