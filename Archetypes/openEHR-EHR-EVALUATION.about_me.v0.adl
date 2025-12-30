@@ -1,4 +1,4 @@
-archetype (adl_version=1.4; uid=7791e768-0e2b-4629-9ab4-67c53a478b66)
+archetype (adl_version=1.4; uid=e466c700-b7c2-4680-9092-4888c7785067)
 	openEHR-EHR-EVALUATION.about_me.v0
 
 concept
@@ -19,17 +19,18 @@ description
 		["en"] = <
 			language = <[ISO_639-1::en]>
 			purpose = <"A place to record narrative text about a person's important information for their care,">
-			copyright = <"© Apperta Foundation">
+			copyright = <"© Apperta Foundation, NHS Education for Scotland">
 		>
 	>
 	other_details = <
 		["licence"] = <"This work is licensed under the Creative Commons Attribution-ShareAlike 4.0 License. To view a copy of this license, visit http://creativecommons.org/licenses/by-sa/4.0/.">
-		["custodian_organisation"] = <"Apperta UK">
-		["original_namespace"] = <"uk.org.clinicalmodels">
-		["original_publisher"] = <"Apperta UK">
-		["custodian_namespace"] = <"uk.org.clinicalmodels">
-		["MD5-CAM-1.0.1"] = <"ADEAE3713312A7C00440EAA7B3BA2CAD">
-		["build_uid"] = <"7d297b96-cd1e-4eb6-975b-b9b400882b27">
+		["custodian_organisation"] = <"NHS Education for Scotland">
+		["references"] = <"Derived from: <Add reference to original resource here>">
+		["original_namespace"] = <"scot.nhs.models">
+		["original_publisher"] = <"NHS Education for Scotland">
+		["custodian_namespace"] = <"scot.nhs.models">
+		["MD5-CAM-1.0.1"] = <"32E6465800C77ED225BBBDA2AED7AD53">
+		["build_uid"] = <"4d6a9a0e-84e8-4c3a-b19e-deca1d2a6dd8">
 		["revision"] = <"0.0.1-alpha">
 	>
 
