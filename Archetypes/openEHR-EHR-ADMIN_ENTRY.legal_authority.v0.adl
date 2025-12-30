@@ -1,4 +1,4 @@
-archetype (adl_version=1.4; uid=63bef2a9-415e-419b-bb5d-23b2b6c6ba86)
+archetype (adl_version=1.4; uid=bfd32940-116c-4f10-81fe-8214a81478e9)
 	openEHR-EHR-ADMIN_ENTRY.legal_authority.v0
 
 concept
@@ -21,7 +21,7 @@ description
 			language = <[ISO_639-1::en]>
 			purpose = <"To record information about legal directives or orders that apply to the individual.">
 			keywords = <"legal, power, attorney, welfare, guardian, guardianship, representative, proxy, decision-maker, advocate, intervention, order", ...>
-			copyright = <"© openEHR Foundation, Apperta Foundation">
+			copyright = <"© openEHR Foundation, NHS Education for Scotland">
 			use = <"Use to record information about legal directives or orders that apply to the individual, for example, a power of attorney, guardianship order, or mental health detention order.
 
 This archetype has been specifically designed as a framework or structure that can be extended for the complex range of use cases and local requirements by nesting a variety of possible CLUSTER archetypes which will contain specific details as per national or other local requirements.
@@ -33,9 +33,11 @@ Not to be used to record details of mental capacity assessments. Use openEHR-EHR
 		>
 	>
 	other_details = <
-		["licence"] = <"This work is licensed under the Creative Commons Attribution-ShareAlike 4.0 License. To view a copy of this license, visit http://creativecommons.org/licenses/by-sa/4.0/.">
-		["custodian_organisation"] = <"Apperta UK">
-		["references"] = <"Appointing a medical treatment decision maker [Internet]. Office of the Public Advocate (Victoria). 2020 [cited 2020 May 11]. Available from: https://www.publicadvocate.vic.gov.au/power-of-attorney/appointing-a-medical-support-person.
+		["licence"] = <"This work is licensed under the Creative Commons Attribution-ShareAlike 4.0 International License. To view a copy of this license, visit http://creativecommons.org/licenses/by-sa/4.0/.">
+		["custodian_organisation"] = <"NHS Education for Scotland">
+		["references"] = <"Derived from: <Add reference to original resource here>
+
+Appointing a medical treatment decision maker [Internet]. Office of the Public Advocate (Victoria). 2020 [cited 2020 May 11]. Available from: https://www.publicadvocate.vic.gov.au/power-of-attorney/appointing-a-medical-support-person.
 
 LegalSituation-v1.0(2019EN) - Zorginformatiebouwstenen [Internet]. Zibs.nl. 2020 [cited 2020 May 11]. Available from: https://zibs.nl/wiki/LegalSituation-v1.0(2019EN).
 
@@ -45,11 +47,11 @@ Powers of Attorney [Internet]. Ministry of the Attorney General (Ontario). 2020 
 
 What is a Power of Attorney [Internet]. Office of the Public Guardian (Scotland). 2020 [cited 2020 May 11]. Available from: https://www.publicguardian-scotland.gov.uk/power-of-attorney.">
 		["current_contact"] = <"Heidi Koikkalainen, heidi@freshehr.com">
-		["original_namespace"] = <"uk.org.clinicalmodels">
-		["original_publisher"] = <"Apperta UK">
-		["custodian_namespace"] = <"uk.org.clinicalmodels">
-		["MD5-CAM-1.0.1"] = <"796668D0D9B435FB43E0FC227D2BEE54">
-		["build_uid"] = <"465d56ce-69a9-46c8-8cba-5113a6e332fe">
+		["original_namespace"] = <"scot.nhs.models">
+		["original_publisher"] = <"NHS Education for Scotland">
+		["custodian_namespace"] = <"scot.nhs.models">
+		["MD5-CAM-1.0.1"] = <"34D0FBF4B5373987951B84CA19FC334A">
+		["build_uid"] = <"90a11cc7-d0ce-45c9-a69e-777de3cbbc01">
 		["revision"] = <"0.0.1-alpha">
 	>
 
