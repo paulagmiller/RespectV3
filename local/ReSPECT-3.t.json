@@ -28,11 +28,11 @@
       "Sign off" : "",
       "Speciality" : "",
       "User roles" : "",
-      "MD5-CAM-1.0.1" : "f72825bea1268c5d769797ecedcde7c8",
+      "MD5-CAM-1.0.1" : "589a9c1562874a964d498b2c3ccadcea",
       "PARENT:MD5-CAM-1.0.1" : "DE0723367AA22BB716CEC5342B21FF60",
       "Template semVer" : "0.2.0",
       "ReSPECT Version" : "3.0.0-published",
-      "sem_ver" : "6.0.0",
+      "sem_ver" : "7.0.0",
       "build_uid" : "",
       "original_language" : "ISO_639-1::en"
     },
@@ -6163,6 +6163,12 @@
             "text" : "Clinical guidance on interventions",
             "description" : "Narrative description of the recommendation.",
             "comment" : "May be coded, using a terminology, if required."
+          },
+          "at0003.1" : {
+            "@type" : "ARCHETYPE_TERM",
+            "code" : "at0003.1",
+            "text" : "Clinical focus",
+            "description" : "Justifications for the recommendation."
           }
         },
         "es-ar" : { },
