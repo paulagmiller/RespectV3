@@ -28,11 +28,11 @@
       "Sign off" : "",
       "Speciality" : "",
       "User roles" : "",
-      "MD5-CAM-1.0.1" : "81f15b2cf4381132019bd683075fd9b4",
+      "MD5-CAM-1.0.1" : "3be6aa1299d51e103f9415178304185c",
       "PARENT:MD5-CAM-1.0.1" : "DE0723367AA22BB716CEC5342B21FF60",
       "Template semVer" : "0.2.0",
       "ReSPECT Version" : "3.0.0-published",
-      "sem_ver" : "4.0.0",
+      "sem_ver" : "5.0.0",
       "build_uid" : "",
       "original_language" : "ISO_639-1::en"
     },
@@ -803,11 +803,11 @@
             "children" : [ {
               "@type" : "C_ARCHETYPE_ROOT",
               "rmTypeName" : "ACTION",
-              "occurrences" : "0..*",
-              "nodeId" : "at0.9",
+              "occurrences" : "0..1",
+              "nodeId" : "at0.15",
               "attributes" : [ ],
               "attributeTuples" : [ ],
-              "archetypeRef" : "openEHR-EHR-ACTION.ovl-service-012.v0",
+              "archetypeRef" : "openEHR-EHR-ACTION.ovl-service-002.v1",
               "referenceType" : "archetypeOverlay"
             } ]
           } ],
@@ -3198,768 +3198,6 @@
     "translations" : [ ]
   }, {
     "@type" : "TEMPLATE_OVERLAY",
-    "uid" : "43c94233-a17e-4eb4-b205-f1165858897e",
-    "description" : {
-      "@type" : "RESOURCE_DESCRIPTION",
-      "originalAuthor" : { },
-      "otherContributors" : [ ],
-      "ipAcknowledgements" : { },
-      "references" : { },
-      "conversionDetails" : { },
-      "otherDetails" : {
-        "PARENT:MD5-CAM-1.0.1" : "7E061EECABAC057F17CABCB1FDBAA7C1"
-      },
-      "details" : {
-        "de" : {
-          "@type" : "RESOURCE_DESCRIPTION_ITEM",
-          "language" : {
-            "terminologyId" : {
-              "value" : "ISO_639-1"
-            },
-            "codeString" : "de"
-          },
-          "purpose" : "Um Informationen über die Ausführung einer angeforderten Gesundheitsleistung aufzuzeichnen.",
-          "keywords" : [ "Überweisung", "Besuch", "Kontakt" ],
-          "use" : "Zur Darstellung von Informationen über die Durchführung einer angeforderten Gesundheitsleistung. Dafür werden relevante Informationen in den definierten Kategorien \"geplant\", \"angesetzt\", \"erbracht\", \"ausgesetzt\", \"storniert\", \"verschoben\" oder \"eingestellt\" aufgezeichnet.\r\n\r\nDer Aufgabenbereich dieses Archetyps umfasst absichtlich ein umfassendes Spektrum an klinischen Leistungen. Folgende Beispiele können dabei erfasst werden, sind aber nicht nur auf diese beschränkt:\r\n- den eigenständigen Besuch eines Patienten zu einem vorsorglichen Check-Up bei einem Zahnarzt oder eine Reihe von Besuchen bei einem Physiotherapeuten aufgrund einer muskulären Verspannung; und\r\n- die Überweisung eines anfordernden Gesundheitsversorgers, wie zum Beispiel eines Hausarztes, an einen aufnehmenden Gesundheitsversorger, wie zum Beispiel einem Facharzt damit der Patient bestimmte Leistung, einen Rat oder Pflege erhält.\r\n\r\nZusätzliche strukturierte und ausführliche Informationen über diese Leistung können, unter Verwendung eines spezifischen Archetyps der in den \"Leistungsdetails\" SLOT integriert wird, dokumentiert werden.\r\n\r\nDie zeitliche Regulierung einer Maßnahme kann auf eine von zwei Arten erreicht werden:\r\n- durch die Verwendung des Referenzmodells - durch Verwendung des Zeitattributs für jeden angesetzten Schritt; und \r\n- durch die Verwendung von Archetypdaten - das Element \"geplantes Datum/geplante Uhrzeit\" ist dafür gedacht einen präzisen Zeitpunkt aufzuzeichnen, an dem eine Leistung geplant ist.\r\n\r\nTatsächlich werden einige Leistungen (zum Beispiel in der ambulanten Versorgung) einmalig und ohne vorherige Anmeldung durchgeführt. Details dieser Leistung werden in der Kategorie \"Leistung vollständig erbracht\" aufgenommen. In einigen Fällen kann eine wiederkehrende Leistung angeordnet werden. In diesem Fall werden Detail in jedem Fall in der Kategorie \"Leistung erbracht\" aufgezeichnet und die Anweisungen im Status \"aktiv\" belassen. Für die letzte Ausführung dieser Leistung wird die Kategorie \"Leistung vollständig erbracht\" verwendet und die Anforderung in den Status \"abgeschlossen\" versetzt.\r\n\r\nIn anderen Situationen, wie der sekundären Versorgung, gibt es möglicherweise eine formelle Anforderung für eine Leistung die dem \"INSTRUCTION.request\" Archetyp entspricht. Dieser ACTION-Archetyp kann dann verwendet werden um den Arbeitsablauf und die Durchführung der Anforderung zu beschreiben.\r\n\r\nDieser Archetyp kann auf zwei Arten verwendet werden:\r\n- als vollständige Aufzeichnung der erbrachten Leistung, oder\r\n- als Rahmen um vorrangig den Status der angeforderten Leistung und separaten OBSERVATION-Archetypen um die eigentlichen Testergebnisse für die erbrachte Leistung aufzuzeichnen. Zum Beispiel mit dem Archetyp \"OBSERVATION.hearing_screening_result\".\r\n\r\nDie Dokumentation von Informationen mit Hilfe dieses ACTION Archetyps weist darauf hin, dass eine Leistung tatsächlich stattgefunden hat. In der Regel handelt es sich dabei um eine erbrachte Leistung, es kann sich jedoch auch um einen Fehlversuch oder eine andere Maßnahme wie das Aussetzen einer Leistungserbringung handeln. Im Falle einer formellen Anforderung wird der Status der Leistung mithilfe der definierten Kategorien aufgezeichnet. Zum Beispiel kann mit Hilfe dieses Archetyps der Fortschritt einer Überweisungsanfrage durch separate Einträge in die elektronische Patientenakte aufgezeichnet werden:\r\n- Aufzeichnung eines geplanten Datum/geplante Uhrzeit der Überweisung (Leistung angesetzt); oder\r\n- Aufzeichnung über eine vollständig erbrachte Leistung, möglicherweise mit zusätzlichen Informationen zur erbrachten Leistung (Leistung vollständig erbracht).\r\n\r\nBitte beachten Sie, dass es im openEHR-Referenzmodell ein Attribut \"Zeit\" gibt, das dazu dient, das Datum und die Uhrzeit zu erfassen, zu der jeder Verlaufsschritt der Aktion ausgeführt wurde. Dies ist das Attribut, mit dem der Beginn der Leistung (mit dem Schritt \"Leistung erbracht\") oder die Zeit, zu der die Leistung abgebrochen wurde (mit dem Schritt \"Leistung eingestellt\"), erfasst wird.",
-          "misuse" : "Nicht zur Darstellung von Informationen über durchgeführte Vorgänge die spezielle Archetypen benötigen, weil sie eine sehr spezifische Datenerfassung oder Anforderungen an Schritte des Pfades haben. Zum Beispiel: ACTION.procedure oder ACTION.health_education.",
-          "originalResourceUri" : { },
-          "otherDetails" : { }
-        },
-        "pt-br" : {
-          "@type" : "RESOURCE_DESCRIPTION_ITEM",
-          "language" : {
-            "terminologyId" : {
-              "value" : "ISO_639-1"
-            },
-            "codeString" : "pt-br"
-          },
-          "purpose" : "Registrar informações sobre a execução de uma solicitação de um serviço relacionado à saúde.",
-          "keywords" : [ "referência", "visita", "encontro" ],
-          "use" : "Use para registrar informações sobre a execução de uma solicitação para um serviço relacionado à saúde. Isso é feito registrando dados relevantes contra qualquer uma ou todas as atividades especificadas nas etapas do caminho: 'Planejada', 'Programada', 'Ativa', 'Suspensa', 'Cancelada', 'Adiada', 'Cancelada'.\r\n\r\nO escopo deste arquétipo engloba deliberadamente atividades para uma ampla gama de serviços clínicos. Exemplos incluem, mas não estão limitados a:\r\n- auto-referência por um paciente para uma visita de check-up a um dentista para cuidados preventivos ou uma série de visitas a um fisioterapeuta para o tratamento de uma tensão musculoesquelética; e\r\n- um encaminhamento de um prestador de serviços de saúde solicitante, como um médico de cuidados primários, para um profissional de saúde que o recebe, como um especialista, para que o paciente receba um serviço, aconselhamento ou atendimento específico.\r\n\r\nInformações adicionais estruturadas e detalhadas sobre o serviço podem ser capturadas usando arquétipos com finalidades específicas, inseridos no slot \"Detalhes do serviço\", onde necessário.\r\n\r\nOs tempos relacionados a um procedimento podem ser gerenciados de duas maneiras:\r\n- usando o modelo de referência - o tempo para a realização de qualquer etapa do caminho usará o atributo tempo do ACTION para cada etapa; e\r\n- usando os dados dos arquétipos - o elemento de dados 'Data/hora programada' destina-se a registrar a hora exata em que o serviço é planejado. Observação: o atributo tempo do ACTION, correspondente para a etapa de caminho agendado, registrará a hora em que o serviço foi agendado em um sistema, não a data/hora em que o serviço deve ser realizado.\r\n\r\nNa prática, alguns serviços (por exemplo, em atendimento ambulatorial) ocorrerão sem que sejam solicitados com antecedência. Os detalhes sobre o serviço serão adicionados fora das etapa do caminho em \"Serviço concluído\". Em alguns casos, um serviço recorrente será solicitado e, nessa situação, os dados em relação à etapa \"Serviço entregue\" serão registrados em cada ocasião, deixando a instrução no estado ativo. Quando a última entrega do serviço é registrada, a ação 'Serviço concluído' é registrada, mostrando que este pedido está agora no estado concluído.\r\n\r\nEm outras situações, como para a atenção secundária, pode haver uma ordem formal para um procedimento usando um arquétipo INSTRUCTION.request correspondente. Esse arquétipo do tipo ACTION pode ser usado para registrar o fluxo de trabalho de quando e como o pedido foi executado.\r\n\r\nEsse arquétipo só pode ser usado de duas maneiras:\r\n- como registro completo do serviço que foi entregue; ou\r\n- como uma estrutura para registrar principalmente o estado do serviço solicitado, com arquétipos de OBSERVAÇÃO separados usados ​​para registrar os resultados reais do teste para o serviço entregue - por exemplo, OBSERVATION.hearing_screening_result.\r\n\r\nA gravação de informações usando arquétipo do tipo ACTION indica que algum tipo de atividade realmente ocorreu; isso geralmente será a entrega do serviço em si, mas pode ser uma tentativa fracassada ou outra atividade, como o adiamento da entrega do serviço. Se houver uma ordem formal para o procedimento, o estado dessa ordem é representado pela etapa do caminho na qual os dados são registrados. Por exemplo, usando esse arquétipo, o estado progressivo de uma solicitação de referência pode ser registrado em entradas separadas nas notas de progresso do registro eletrônico de saúde, para cada etapa do caminho:\r\n- registrar a data/hora de início agendada para o encaminhamento (serviço agendado); e\r\n- registrar que o encaminhamento foi concluído, potencialmente incluindo informações sobre o serviço entregue (serviço concluído).\r\n\r\nObserve que no modelo de referência openEHR existe um atributo 'Tempo' que se destina a registrar a data e a hora em que cada etapa do caminho da Ação foi realizada. Esse é o atributo a ser usado para registrar o início do procedimento (usando a etapa do caminho 'Serviço entregue') ou o horário em que o serviço foi cancelado (usando a etapa do caminho 'Serviço abandonado').",
-          "misuse" : "Não deve ser usado para registrar dados sobre atividades realizadas para atividades que exigem um arquétipo ACTION construído para esse fim, pois elas possuem requisitos muito específicos de registro de dados ou de etapas do caminho. Por exemplo: ACTION.procedure ou ACTION.health_education.",
-          "originalResourceUri" : { },
-          "otherDetails" : { }
-        },
-        "en" : {
-          "@type" : "RESOURCE_DESCRIPTION_ITEM",
-          "language" : {
-            "terminologyId" : {
-              "value" : "ISO_639-1"
-            },
-            "codeString" : "en"
-          },
-          "purpose" : "To record information about the execution of a request for a health-related service.",
-          "keywords" : [ "referral", "visit", "encounter" ],
-          "use" : "Use to record information about the execution of a request for a health-related service. This is done by recording relevant data against any or all of activities specified in the 'Planned', 'Scheduled', 'Active', 'Suspended', 'Cancelled', 'Postponed', 'Aborted' pathway steps.\r\n\r\nThe scope of this archetype deliberately encompasses activities for a broad range of clinical services. Examples include, but are not limited to:\r\n- self-referral by a patient for a check-up visit to a dentist for preventive care or a series of visits to a physiotherapist for management of a musculoskeletal strain; and\r\n- a referral from a requesting healthcare provider, such as a primary care clinician, to a receiving healthcare provider, such as a specialist, for the patient to receive a specific service, advice or care.\r\n\r\nAdditional structured and detailed information about the service can be captured using purpose-specific archetypes inserted into the 'Service detail' slot, where required.\r\n\r\nTimings related to a procedure can be managed in one of two ways:\r\n- using the reference model - the time for performance of any pathway step will use the ACTION time attribute for each step; and\r\n- using the archetyped data - the 'Scheduled date/time' data element is intended to record the precise time when the service is planned. Note: the corresponding ACTION time attribute for the Scheduled pathway step will record the time that the service was scheduled into a system, not the intended date/time on which the service is intended to be carried out.\r\n\r\nIn practice, some services (for example, in ambulatory care) will occur once and not be ordered in advance. The details about the service will be added against the pathway step, 'Service completed'. In some cases a recurring service will be ordered, and in this situation data against the 'Service delivered' step will be recorded on each occasion, leaving the instruction in the active state. When the last delivery of the service is recorded, the 'Service completed' action is recorded showing that this order is now in the completed state.\r\n\r\nIn other situations, such as secondary care, there may be a formal order for a procedure using a corresponding INSTRUCTION.request archetype. This ACTION archetype can then be used to record the workflow of when and how the order has been carried out.\r\n\r\nThis archetype may only be used in two ways:\r\n- as a full record of the service that was delivered; or\r\n- as a framework to record primarily the state of the requested service, with separate OBSERVATION archetypes used to record the actual test results for the delivered service - for example OBSERVATION.hearing_screening_result.\r\n\r\nRecording information using this ACTION archetype indicates that some sort of activity has actually occurred; this will usually be the service delivery itself but may be a failed attempt or another activity such as postponement of the service delivery. If there is a formal order for the procedure, the state of this order is represented by the Pathway step against which the data is recorded. For example, using this archetype the progressing state of a referral request may be recorded through separate entries in the EHR progress notes at each 'Pathway' step:\r\n- record the scheduled Start date/time for the referral (Service scheduled); and\r\n- record that the referral has been completed, potentially including information about the service delivered (Service completed).\r\n\r\nPlease note that in the openEHR Reference Model there is a 'Time' attribute, which is intended to record the date and time at which each pathway step of the Action was performed. This is the attribute to use to record the start of the procedure (using the 'Service delivered' pathway step) or the time that the service was aborted (using the 'Service abandoned' pathway step).",
-          "misuse" : "Not to be used to record data about activities carried out for activities that require a purpose built ACTION archetype because they have very specific data recording or pathway step requirements. For example: ACTION.procedure or ACTION.health_education.",
-          "copyright" : "© openEHR Foundation, Northern Territory Department of Health (Australia)",
-          "originalResourceUri" : { },
-          "otherDetails" : { }
-        }
-      }
-    },
-    "parentArchetypeId" : "openEHR-EHR-ACTION.service.v0",
-    "differential" : true,
-    "archetypeId" : {
-      "@type" : "ARCHETYPE_HRID",
-      "value" : "openEHR-EHR-ACTION.ovl-service-012.v0"
-    },
-    "definition" : {
-      "@type" : "C_COMPLEX_OBJECT",
-      "rmTypeName" : "ACTION",
-      "nodeId" : "at0000.1",
-      "attributes" : [ {
-        "@type" : "C_ATTRIBUTE",
-        "rmAttributeName" : "ism_transition",
-        "children" : [ {
-          "@type" : "C_COMPLEX_OBJECT",
-          "rmTypeName" : "ISM_TRANSITION",
-          "occurrences" : "0..0",
-          "nodeId" : "at0002.1",
-          "attributes" : [ {
-            "@type" : "C_ATTRIBUTE",
-            "rmAttributeName" : "current_state",
-            "children" : [ {
-              "@type" : "C_COMPLEX_OBJECT",
-              "rmTypeName" : "DV_CODED_TEXT",
-              "attributes" : [ {
-                "@type" : "C_ATTRIBUTE",
-                "rmAttributeName" : "defining_code",
-                "children" : [ {
-                  "@type" : "C_TERMINOLOGY_CODE",
-                  "rmTypeName" : "CODE_PHRASE",
-                  "occurrences" : "1..1",
-                  "terminologyId" : {
-                    "value" : "openehr"
-                  },
-                  "constraint" : [ "526" ]
-                } ]
-              } ],
-              "attributeTuples" : [ ]
-            } ]
-          }, {
-            "@type" : "C_ATTRIBUTE",
-            "rmAttributeName" : "careflow_step",
-            "children" : [ {
-              "@type" : "C_COMPLEX_OBJECT",
-              "rmTypeName" : "DV_CODED_TEXT",
-              "attributes" : [ {
-                "@type" : "C_ATTRIBUTE",
-                "rmAttributeName" : "defining_code",
-                "children" : [ {
-                  "@type" : "C_TERMINOLOGY_CODE",
-                  "rmTypeName" : "CODE_PHRASE",
-                  "occurrences" : "1..1",
-                  "terminologyId" : {
-                    "value" : "local"
-                  },
-                  "constraint" : [ "at0002" ]
-                } ]
-              } ],
-              "attributeTuples" : [ ]
-            } ]
-          } ],
-          "attributeTuples" : [ ]
-        }, {
-          "@type" : "C_COMPLEX_OBJECT",
-          "rmTypeName" : "ISM_TRANSITION",
-          "occurrences" : "0..0",
-          "nodeId" : "at0026.1",
-          "attributes" : [ {
-            "@type" : "C_ATTRIBUTE",
-            "rmAttributeName" : "current_state",
-            "children" : [ {
-              "@type" : "C_COMPLEX_OBJECT",
-              "rmTypeName" : "DV_CODED_TEXT",
-              "attributes" : [ {
-                "@type" : "C_ATTRIBUTE",
-                "rmAttributeName" : "defining_code",
-                "children" : [ {
-                  "@type" : "C_TERMINOLOGY_CODE",
-                  "rmTypeName" : "CODE_PHRASE",
-                  "occurrences" : "1..1",
-                  "terminologyId" : {
-                    "value" : "openehr"
-                  },
-                  "constraint" : [ "526" ]
-                } ]
-              } ],
-              "attributeTuples" : [ ]
-            } ]
-          }, {
-            "@type" : "C_ATTRIBUTE",
-            "rmAttributeName" : "careflow_step",
-            "children" : [ {
-              "@type" : "C_COMPLEX_OBJECT",
-              "rmTypeName" : "DV_CODED_TEXT",
-              "attributes" : [ {
-                "@type" : "C_ATTRIBUTE",
-                "rmAttributeName" : "defining_code",
-                "children" : [ {
-                  "@type" : "C_TERMINOLOGY_CODE",
-                  "rmTypeName" : "CODE_PHRASE",
-                  "occurrences" : "1..1",
-                  "terminologyId" : {
-                    "value" : "local"
-                  },
-                  "constraint" : [ "at0026" ]
-                } ]
-              } ],
-              "attributeTuples" : [ ]
-            } ]
-          } ],
-          "attributeTuples" : [ ]
-        }, {
-          "@type" : "C_COMPLEX_OBJECT",
-          "rmTypeName" : "ISM_TRANSITION",
-          "occurrences" : "0..0",
-          "nodeId" : "at0008.1",
-          "attributes" : [ {
-            "@type" : "C_ATTRIBUTE",
-            "rmAttributeName" : "current_state",
-            "children" : [ {
-              "@type" : "C_COMPLEX_OBJECT",
-              "rmTypeName" : "DV_CODED_TEXT",
-              "attributes" : [ {
-                "@type" : "C_ATTRIBUTE",
-                "rmAttributeName" : "defining_code",
-                "children" : [ {
-                  "@type" : "C_TERMINOLOGY_CODE",
-                  "rmTypeName" : "CODE_PHRASE",
-                  "occurrences" : "1..1",
-                  "terminologyId" : {
-                    "value" : "openehr"
-                  },
-                  "constraint" : [ "527" ]
-                } ]
-              } ],
-              "attributeTuples" : [ ]
-            } ]
-          }, {
-            "@type" : "C_ATTRIBUTE",
-            "rmAttributeName" : "careflow_step",
-            "children" : [ {
-              "@type" : "C_COMPLEX_OBJECT",
-              "rmTypeName" : "DV_CODED_TEXT",
-              "attributes" : [ {
-                "@type" : "C_ATTRIBUTE",
-                "rmAttributeName" : "defining_code",
-                "children" : [ {
-                  "@type" : "C_TERMINOLOGY_CODE",
-                  "rmTypeName" : "CODE_PHRASE",
-                  "occurrences" : "1..1",
-                  "terminologyId" : {
-                    "value" : "local"
-                  },
-                  "constraint" : [ "at0008" ]
-                } ]
-              } ],
-              "attributeTuples" : [ ]
-            } ]
-          } ],
-          "attributeTuples" : [ ]
-        }, {
-          "@type" : "C_COMPLEX_OBJECT",
-          "rmTypeName" : "ISM_TRANSITION",
-          "occurrences" : "0..0",
-          "nodeId" : "at0009.1",
-          "attributes" : [ {
-            "@type" : "C_ATTRIBUTE",
-            "rmAttributeName" : "current_state",
-            "children" : [ {
-              "@type" : "C_COMPLEX_OBJECT",
-              "rmTypeName" : "DV_CODED_TEXT",
-              "attributes" : [ {
-                "@type" : "C_ATTRIBUTE",
-                "rmAttributeName" : "defining_code",
-                "children" : [ {
-                  "@type" : "C_TERMINOLOGY_CODE",
-                  "rmTypeName" : "CODE_PHRASE",
-                  "occurrences" : "1..1",
-                  "terminologyId" : {
-                    "value" : "openehr"
-                  },
-                  "constraint" : [ "528" ]
-                } ]
-              } ],
-              "attributeTuples" : [ ]
-            } ]
-          }, {
-            "@type" : "C_ATTRIBUTE",
-            "rmAttributeName" : "careflow_step",
-            "children" : [ {
-              "@type" : "C_COMPLEX_OBJECT",
-              "rmTypeName" : "DV_CODED_TEXT",
-              "attributes" : [ {
-                "@type" : "C_ATTRIBUTE",
-                "rmAttributeName" : "defining_code",
-                "children" : [ {
-                  "@type" : "C_TERMINOLOGY_CODE",
-                  "rmTypeName" : "CODE_PHRASE",
-                  "occurrences" : "1..1",
-                  "terminologyId" : {
-                    "value" : "local"
-                  },
-                  "constraint" : [ "at0009" ]
-                } ]
-              } ],
-              "attributeTuples" : [ ]
-            } ]
-          } ],
-          "attributeTuples" : [ ]
-        }, {
-          "@type" : "C_COMPLEX_OBJECT",
-          "rmTypeName" : "ISM_TRANSITION",
-          "occurrences" : "0..0",
-          "nodeId" : "at0003.1",
-          "attributes" : [ {
-            "@type" : "C_ATTRIBUTE",
-            "rmAttributeName" : "current_state",
-            "children" : [ {
-              "@type" : "C_COMPLEX_OBJECT",
-              "rmTypeName" : "DV_CODED_TEXT",
-              "attributes" : [ {
-                "@type" : "C_ATTRIBUTE",
-                "rmAttributeName" : "defining_code",
-                "children" : [ {
-                  "@type" : "C_TERMINOLOGY_CODE",
-                  "rmTypeName" : "CODE_PHRASE",
-                  "occurrences" : "1..1",
-                  "terminologyId" : {
-                    "value" : "openehr"
-                  },
-                  "constraint" : [ "529" ]
-                } ]
-              } ],
-              "attributeTuples" : [ ]
-            } ]
-          }, {
-            "@type" : "C_ATTRIBUTE",
-            "rmAttributeName" : "careflow_step",
-            "children" : [ {
-              "@type" : "C_COMPLEX_OBJECT",
-              "rmTypeName" : "DV_CODED_TEXT",
-              "attributes" : [ {
-                "@type" : "C_ATTRIBUTE",
-                "rmAttributeName" : "defining_code",
-                "children" : [ {
-                  "@type" : "C_TERMINOLOGY_CODE",
-                  "rmTypeName" : "CODE_PHRASE",
-                  "occurrences" : "1..1",
-                  "terminologyId" : {
-                    "value" : "local"
-                  },
-                  "constraint" : [ "at0003" ]
-                } ]
-              } ],
-              "attributeTuples" : [ ]
-            } ]
-          } ],
-          "attributeTuples" : [ ]
-        }, {
-          "@type" : "C_COMPLEX_OBJECT",
-          "rmTypeName" : "ISM_TRANSITION",
-          "occurrences" : "0..0",
-          "nodeId" : "at0004.1",
-          "attributes" : [ {
-            "@type" : "C_ATTRIBUTE",
-            "rmAttributeName" : "current_state",
-            "children" : [ {
-              "@type" : "C_COMPLEX_OBJECT",
-              "rmTypeName" : "DV_CODED_TEXT",
-              "attributes" : [ {
-                "@type" : "C_ATTRIBUTE",
-                "rmAttributeName" : "defining_code",
-                "children" : [ {
-                  "@type" : "C_TERMINOLOGY_CODE",
-                  "rmTypeName" : "CODE_PHRASE",
-                  "occurrences" : "1..1",
-                  "terminologyId" : {
-                    "value" : "openehr"
-                  },
-                  "constraint" : [ "245" ]
-                } ]
-              } ],
-              "attributeTuples" : [ ]
-            } ]
-          }, {
-            "@type" : "C_ATTRIBUTE",
-            "rmAttributeName" : "careflow_step",
-            "children" : [ {
-              "@type" : "C_COMPLEX_OBJECT",
-              "rmTypeName" : "DV_CODED_TEXT",
-              "attributes" : [ {
-                "@type" : "C_ATTRIBUTE",
-                "rmAttributeName" : "defining_code",
-                "children" : [ {
-                  "@type" : "C_TERMINOLOGY_CODE",
-                  "rmTypeName" : "CODE_PHRASE",
-                  "occurrences" : "1..1",
-                  "terminologyId" : {
-                    "value" : "local"
-                  },
-                  "constraint" : [ "at0004" ]
-                } ]
-              } ],
-              "attributeTuples" : [ ]
-            } ]
-          } ],
-          "attributeTuples" : [ ]
-        }, {
-          "@type" : "C_COMPLEX_OBJECT",
-          "rmTypeName" : "ISM_TRANSITION",
-          "occurrences" : "0..0",
-          "nodeId" : "at0010.1",
-          "attributes" : [ {
-            "@type" : "C_ATTRIBUTE",
-            "rmAttributeName" : "current_state",
-            "children" : [ {
-              "@type" : "C_COMPLEX_OBJECT",
-              "rmTypeName" : "DV_CODED_TEXT",
-              "attributes" : [ {
-                "@type" : "C_ATTRIBUTE",
-                "rmAttributeName" : "defining_code",
-                "children" : [ {
-                  "@type" : "C_TERMINOLOGY_CODE",
-                  "rmTypeName" : "CODE_PHRASE",
-                  "occurrences" : "1..1",
-                  "terminologyId" : {
-                    "value" : "openehr"
-                  },
-                  "constraint" : [ "530" ]
-                } ]
-              } ],
-              "attributeTuples" : [ ]
-            } ]
-          }, {
-            "@type" : "C_ATTRIBUTE",
-            "rmAttributeName" : "careflow_step",
-            "children" : [ {
-              "@type" : "C_COMPLEX_OBJECT",
-              "rmTypeName" : "DV_CODED_TEXT",
-              "attributes" : [ {
-                "@type" : "C_ATTRIBUTE",
-                "rmAttributeName" : "defining_code",
-                "children" : [ {
-                  "@type" : "C_TERMINOLOGY_CODE",
-                  "rmTypeName" : "CODE_PHRASE",
-                  "occurrences" : "1..1",
-                  "terminologyId" : {
-                    "value" : "local"
-                  },
-                  "constraint" : [ "at0010" ]
-                } ]
-              } ],
-              "attributeTuples" : [ ]
-            } ]
-          } ],
-          "attributeTuples" : [ ]
-        }, {
-          "@type" : "C_COMPLEX_OBJECT",
-          "rmTypeName" : "ISM_TRANSITION",
-          "occurrences" : "0..0",
-          "nodeId" : "at0006.1",
-          "attributes" : [ {
-            "@type" : "C_ATTRIBUTE",
-            "rmAttributeName" : "current_state",
-            "children" : [ {
-              "@type" : "C_COMPLEX_OBJECT",
-              "rmTypeName" : "DV_CODED_TEXT",
-              "attributes" : [ {
-                "@type" : "C_ATTRIBUTE",
-                "rmAttributeName" : "defining_code",
-                "children" : [ {
-                  "@type" : "C_TERMINOLOGY_CODE",
-                  "rmTypeName" : "CODE_PHRASE",
-                  "occurrences" : "1..1",
-                  "terminologyId" : {
-                    "value" : "openehr"
-                  },
-                  "constraint" : [ "531" ]
-                } ]
-              } ],
-              "attributeTuples" : [ ]
-            } ]
-          }, {
-            "@type" : "C_ATTRIBUTE",
-            "rmAttributeName" : "careflow_step",
-            "children" : [ {
-              "@type" : "C_COMPLEX_OBJECT",
-              "rmTypeName" : "DV_CODED_TEXT",
-              "attributes" : [ {
-                "@type" : "C_ATTRIBUTE",
-                "rmAttributeName" : "defining_code",
-                "children" : [ {
-                  "@type" : "C_TERMINOLOGY_CODE",
-                  "rmTypeName" : "CODE_PHRASE",
-                  "occurrences" : "1..1",
-                  "terminologyId" : {
-                    "value" : "local"
-                  },
-                  "constraint" : [ "at0006" ]
-                } ]
-              } ],
-              "attributeTuples" : [ ]
-            } ]
-          } ],
-          "attributeTuples" : [ ]
-        }, {
-          "@type" : "C_COMPLEX_OBJECT",
-          "rmTypeName" : "ISM_TRANSITION",
-          "occurrences" : "0..0",
-          "nodeId" : "at0023.1",
-          "attributes" : [ {
-            "@type" : "C_ATTRIBUTE",
-            "rmAttributeName" : "current_state",
-            "children" : [ {
-              "@type" : "C_COMPLEX_OBJECT",
-              "rmTypeName" : "DV_CODED_TEXT",
-              "attributes" : [ {
-                "@type" : "C_ATTRIBUTE",
-                "rmAttributeName" : "defining_code",
-                "children" : [ {
-                  "@type" : "C_TERMINOLOGY_CODE",
-                  "rmTypeName" : "CODE_PHRASE",
-                  "occurrences" : "1..1",
-                  "terminologyId" : {
-                    "value" : "openehr"
-                  },
-                  "constraint" : [ "531" ]
-                } ]
-              } ],
-              "attributeTuples" : [ ]
-            } ]
-          }, {
-            "@type" : "C_ATTRIBUTE",
-            "rmAttributeName" : "careflow_step",
-            "children" : [ {
-              "@type" : "C_COMPLEX_OBJECT",
-              "rmTypeName" : "DV_CODED_TEXT",
-              "attributes" : [ {
-                "@type" : "C_ATTRIBUTE",
-                "rmAttributeName" : "defining_code",
-                "children" : [ {
-                  "@type" : "C_TERMINOLOGY_CODE",
-                  "rmTypeName" : "CODE_PHRASE",
-                  "occurrences" : "1..1",
-                  "terminologyId" : {
-                    "value" : "local"
-                  },
-                  "constraint" : [ "at0023" ]
-                } ]
-              } ],
-              "attributeTuples" : [ ]
-            } ]
-          } ],
-          "attributeTuples" : [ ]
-        } ]
-      }, {
-        "@type" : "C_ATTRIBUTE",
-        "rmAttributeName" : "description",
-        "children" : [ {
-          "@type" : "C_COMPLEX_OBJECT",
-          "rmTypeName" : "ITEM_TREE",
-          "nodeId" : "at0001",
-          "attributes" : [ {
-            "@type" : "C_ATTRIBUTE",
-            "rmAttributeName" : "items",
-            "children" : [ {
-              "@type" : "C_COMPLEX_OBJECT",
-              "rmTypeName" : "ELEMENT",
-              "nodeId" : "at0011.1",
-              "attributes" : [ {
-                "@type" : "C_ATTRIBUTE",
-                "rmAttributeName" : "value",
-                "children" : [ {
-                  "@type" : "C_COMPLEX_OBJECT",
-                  "rmTypeName" : "DV_TEXT",
-                  "attributes" : [ {
-                    "@type" : "C_ATTRIBUTE",
-                    "rmAttributeName" : "value",
-                    "existence" : "0..1",
-                    "children" : [ {
-                      "@type" : "C_STRING",
-                      "constraint" : [ "ReSPECT - clinician signature", "ReSPECT - senior responsible clinician signature" ]
-                    } ]
-                  } ],
-                  "attributeTuples" : [ ]
-                } ]
-              } ],
-              "attributeTuples" : [ ]
-            }, {
-              "@type" : "C_COMPLEX_OBJECT",
-              "rmTypeName" : "ELEMENT",
-              "occurrences" : "0..0",
-              "nodeId" : "at0014.1",
-              "attributes" : [ ],
-              "attributeTuples" : [ ]
-            }, {
-              "@type" : "C_COMPLEX_OBJECT",
-              "rmTypeName" : "ELEMENT",
-              "occurrences" : "0..0",
-              "nodeId" : "at0013.1",
-              "attributes" : [ ],
-              "attributeTuples" : [ ]
-            }, {
-              "@type" : "C_COMPLEX_OBJECT",
-              "rmTypeName" : "ELEMENT",
-              "occurrences" : "0..0",
-              "nodeId" : "at0025.1",
-              "attributes" : [ ],
-              "attributeTuples" : [ ]
-            }, {
-              "@type" : "C_COMPLEX_OBJECT",
-              "rmTypeName" : "ELEMENT",
-              "occurrences" : "0..0",
-              "nodeId" : "at0021.1",
-              "attributes" : [ {
-                "@type" : "C_ATTRIBUTE",
-                "rmAttributeName" : "value",
-                "children" : [ {
-                  "@type" : "C_COMPLEX_OBJECT",
-                  "rmTypeName" : "DV_COUNT",
-                  "attributes" : [ {
-                    "@type" : "C_ATTRIBUTE",
-                    "rmAttributeName" : "magnitude",
-                    "children" : [ {
-                      "@type" : "C_INTEGER",
-                      "rmTypeName" : "Integer",
-                      "occurrences" : "1..1",
-                      "constraint" : [ {
-                        "lower" : 0,
-                        "lowerIncluded" : true,
-                        "upperIncluded" : false,
-                        "lowerUnbounded" : false,
-                        "upperUnbounded" : true
-                      } ]
-                    } ]
-                  } ],
-                  "attributeTuples" : [ ]
-                } ]
-              } ],
-              "attributeTuples" : [ ]
-            }, {
-              "@type" : "C_COMPLEX_OBJECT",
-              "rmTypeName" : "ELEMENT",
-              "occurrences" : "0..0",
-              "nodeId" : "at0012.1",
-              "attributes" : [ ],
-              "attributeTuples" : [ ]
-            }, {
-              "@type" : "C_COMPLEX_OBJECT",
-              "rmTypeName" : "ELEMENT",
-              "occurrences" : "0..0",
-              "nodeId" : "at0028.1",
-              "attributes" : [ ],
-              "attributeTuples" : [ ]
-            } ]
-          } ],
-          "attributeTuples" : [ ]
-        } ]
-      }, {
-        "@type" : "C_ATTRIBUTE",
-        "rmAttributeName" : "protocol",
-        "children" : [ {
-          "@type" : "C_COMPLEX_OBJECT",
-          "rmTypeName" : "ITEM_TREE",
-          "nodeId" : "at0015",
-          "attributes" : [ {
-            "@type" : "C_ATTRIBUTE",
-            "rmAttributeName" : "items",
-            "children" : [ {
-              "@type" : "C_COMPLEX_OBJECT",
-              "rmTypeName" : "ELEMENT",
-              "occurrences" : "0..0",
-              "nodeId" : "at0016.1",
-              "attributes" : [ ],
-              "attributeTuples" : [ ]
-            }, {
-              "@type" : "C_COMPLEX_OBJECT",
-              "rmTypeName" : "ELEMENT",
-              "occurrences" : "0..0",
-              "nodeId" : "at0018.1",
-              "attributes" : [ ],
-              "attributeTuples" : [ ]
-            } ]
-          } ],
-          "attributeTuples" : [ ]
-        } ]
-      } ],
-      "attributeTuples" : [ ],
-      "attributeCustomizations" : {
-        "time" : {
-          "aliases" : {
-            "en" : "Review date",
-            "pt-br" : "Review date",
-            "de" : "Review date"
-          }
-        },
-        "provider" : {
-          "aliases" : {
-            "en" : "provider",
-            "pt-br" : "provider",
-            "de" : "provider"
-          }
-        }
-      }
-    },
-    "terminology" : {
-      "@type" : "ARCHETYPE_TERMINOLOGY",
-      "conceptCode" : "at0000",
-      "termDefinitions" : {
-        "en" : {
-          "at0000.1" : {
-            "@type" : "ARCHETYPE_TERM",
-            "code" : "at0000.1",
-            "text" : "Clinician signature",
-            "description" : "A general clinical activity carried out for the patient to receive a specified service, advice or care from an expert healthcare provider."
-          },
-          "at0025.1" : {
-            "@type" : "ARCHETYPE_TERM",
-            "code" : "at0025.1",
-            "text" : "Review date",
-            "description" : "The date and/or time on which the service is intended to be performed.",
-            "comment" : "Only for use in association with the 'Service scheduled' pathway step."
-          }
-        },
-        "pt-br" : {
-          "at0000.1" : {
-            "@type" : "ARCHETYPE_TERM",
-            "code" : "at0000.1",
-            "text" : "Clinician signature",
-            "description" : "Uma atividade clínica geral realizada para o paciente receber um serviço específico, aconselhamento ou assistência de um profissional de saúde especializado."
-          },
-          "at0025.1" : {
-            "@type" : "ARCHETYPE_TERM",
-            "code" : "at0025.1",
-            "text" : "Review date",
-            "description" : "A data e/ou hora em que o serviço deve ser executado.",
-            "comment" : "Apenas para uso em associação com a etapa 'Serviço agendado'."
-          }
-        },
-        "de" : {
-          "at0000.1" : {
-            "@type" : "ARCHETYPE_TERM",
-            "code" : "at0000.1",
-            "text" : "Clinician signature",
-            "description" : "Eine allgemeine klinische Tätigkeit die durchgeführt wird, damit der Patient eine bestimmte Leistung, einen Rat oder Pflege von einem professionellen Gesundheitsversorger erhalten kann."
-          },
-          "at0025.1" : {
-            "@type" : "ARCHETYPE_TERM",
-            "code" : "at0025.1",
-            "text" : "Review date",
-            "description" : "Das Datum und/oder Uhrzeit für welche die Leistung geplant ist.",
-            "comment" : "Nur zusammen mit dem Schritt \"Leistung geplant\" verwenden."
-          }
-        }
-      },
-      "termBindings" : { },
-      "terminologyExtracts" : { },
-      "valueSets" : { }
-    },
-    "adlVersion" : "1.4",
-    "buildUid" : "36468cbb-24f3-49f5-9248-a4cd1b623e44",
-    "rmName" : "openehr",
-    "rmRelease" : "1.1.0",
-    "generated" : true,
-    "otherMetaData" : { },
-    "originalLanguage" : {
-      "terminologyId" : {
-        "value" : "ISO_639-1"
-      },
-      "codeString" : "en"
-    },
-    "translations" : [ {
-      "@type" : "TRANSLATION_DETAILS",
-      "language" : {
-        "terminologyId" : {
-          "value" : "ISO_639-1"
-        },
-        "codeString" : "de"
-      },
-      "author" : {
-        "name" : "Eva-Maria Rieß",
-        "organisation" : "Universitätsmedizin Göttingen",
-        "email" : "eva-maria.riess@med.uni-goettingen.de"
-      },
-      "otherDetails" : { }
-    }, {
-      "@type" : "TRANSLATION_DETAILS",
-      "language" : {
-        "terminologyId" : {
-          "value" : "ISO_639-1"
-        },
-        "codeString" : "pt-br"
-      },
-      "author" : {
-        "name" : "Ana Paula Pannuti, Débora Farage, Adriana Kitajima, Fernanda Maia e Clóvis Puttini.",
-        "organisation" : "Core Consulting",
-        "email" : "ana.andrade@coreconsulting.com.br"
-      },
-      "otherDetails" : { }
-    } ]
-  }, {
-    "@type" : "TEMPLATE_OVERLAY",
     "uid" : "bbf30266-c665-4d9a-9db8-a387fa249904",
     "description" : {
       "@type" : "RESOURCE_DESCRIPTION",
@@ -4999,7 +4237,84 @@
       "otherDetails" : {
         "PARENT:MD5-CAM-1.0.1" : "59768065AB730E2797D08FD84C2789BA"
       },
-      "details" : { }
+      "details" : {
+        "de" : {
+          "@type" : "RESOURCE_DESCRIPTION_ITEM",
+          "language" : {
+            "terminologyId" : {
+              "value" : "ISO_639-1"
+            },
+            "codeString" : "de"
+          },
+          "purpose" : "Zur Repräsentation der Präferenzen einer Person für zukünftige medizinische Behandlung und Pflege.",
+          "keywords" : [ "Leben, Testament, Entscheidung, Richtlinie, Verfügung, Recht, Präferenz, EoL, DNR, DNACPR, Reanimation" ],
+          "use" : "Zur Repräsentation der Präferenzen einer Person für zukünftige medizinische Behandlung und Pflege.\r\n\r\nDie Anordnung zur medizinischen Versorgung kann auch als Patientenverfügung, Patientenanordnung, Patientenentscheidung, Patientenverweigerung, persönliche Anordnung, Patientenverfügung zur medizinischen Versorgung oder medizinische Anordnung bezeichnet werden. Eine Patientenverfügung wird üblicherweise verwendet, um eine lebenserhaltende Behandlung zu verweigern, die unter anderem Folgendes umfassen kann: Herz-Lungen-Wiederbelebung (HLW), klinisch unterstützte Ernährung und Flüssigkeitszufuhr, unterstützte Beatmung und Antibiotika bei lebensbedrohlichen Infektionen. Sie könnte auch positive Präferenzen und Anweisungen für zukünftige Prioritäten in der Gesundheitsversorgung, bei den Lebensumständen und in persönlichen Angelegenheiten beinhalten. Eine fähige Person kann eine Richtlinie zur medizinischen Vorabversorgung erstellen, um ihre Präferenzen für die medizinische Versorgung und Behandlung im Voraus festzuhalten, die als Leitfaden für die Entscheidungsfindung in zukünftigen Situationen dienen soll, in denen die Person nicht in der Lage ist, Entscheidungen zu treffen oder mitzuteilen. \r\n\r\nDieser Archetyp wurde speziell als Rahmen oder Struktur entwickelt, die für die komplexe Vielfalt von Anwendungsfällen und lokalen Anforderungen erweitert werden kann, indem eine Vielzahl möglicher CLUSTER-Archetypen verschachtelt wird, die je nach nationalen oder anderen lokalen Anforderungen spezifische Angaben enthalten. \r\n\r\nIn einigen Ländern ist eine Patientenverfügung rechtlich überzeugend, ohne einen offiziellen Rechtsstatus zu haben. In anderen Ländern handelt es sich um ein rechtsverbindliches Dokument und es MUSS sichergestellt werden, dass der Archetyp der Patientenverfügung und alle verschachtelten Archetypen den einschlägigen rechtlichen Anforderungen entsprechen.\r\n",
+          "misuse" : "Nicht zur Erfassung von Organspendepräferenzen verwenden. Verwenden Sie hierfür einen spezifischen Archetyp.\r\n\r\nNicht zur Erfassung von Angaben zu einer Vollmacht oder einem anderen gesetzlichen Vertreter/Bevollmächtigten verwenden. Verwenden Sie hierfür einen spezifischen Archetyp.\r\n\r\nNicht zur Erfassung von vorausschauenden Entscheidungen über Kardiopulmonale Wiederbelebung (HLW), andere mögliche Interventionsentscheidungen und die vom Arzt in einer Patientenakte dargelegte Behandlungsabsicht verwenden. Verwenden Sie hierfür den Archetyp EVALUATION.advance_intervention_decisions.",
+          "originalResourceUri" : { },
+          "otherDetails" : { }
+        },
+        "nb" : {
+          "@type" : "RESOURCE_DESCRIPTION_ITEM",
+          "language" : {
+            "terminologyId" : {
+              "value" : "ISO_639-1"
+            },
+            "codeString" : "nb"
+          },
+          "purpose" : "For å registrere et individs viljeserklæring i forbindelse medisinsk fremtidig behandling og omsorg.",
+          "keywords" : [ "livstestament, EoL, End-of-life, R-, Res minus, livsforlengende, behandlingsreservasjon" ],
+          "use" : "Bruk som et rammeverk for å kommunisere et individs vilje i forbindelse med fremtidig medisinsk behandling og omsorg.\r\n\r\nEt individ som har mental kapasitet til det kan lage en viljesrerklæring som uttrykker sine ønsker knyttet til fremtidig medisinsk behandling og omsorg. Dette har til hensikt å veilede beslutninger i fremtidige situasjoner der individet er ute av stand til å gjøre, eller formidle egne valg. Et fremtidig behandlingsvalg blir normalt brukt til å motsette seg livsforlengende behandling som kan, men er ikke begrenset til, hjerte- lungeredning (HLR), kunstig tilført ernæring og væske, invasiv- og non-invasiv ventilasjonsstøtte, og antibiotikabehandling av livstruende infeksjoner. I tillegg kan det inneholde ønsker og instrukser av ikke-restriktiv art for fremtidig behandling, boform eller personlige forhold. For eksempel å prioritere god smertelindring til tross for at dette kan forkorte livet.\r\n\r\nDenne arketypen har blitt designet som et rammeverk for å kunne dekke et vidt spekter av brukssituasjoner ved å nøste inn en eller flere CLUSTER-arketyper med spesifikke detaljer og nasjonale eller lokale krav. \r\n\r\nI noen land er et et fremtidig behandlingsvalg retningsgivende uten å være et offisielt juridisk dokument. I andre land er det juridisk bindende, og det må da sikres at arketypen \"Fremtidig behandlingsvalg\" og eventuelle arketyper som nøstes inn i denne, tilfredsstiller de juridiske krav som stilles lokalt.",
+          "misuse" : "\t\r\nSkal ikke brukes for å registrere ønsker knyttet til organdonasjon. Bruk spesifikke arketyper for dette formålet.\r\n\r\nSkal ikke brukes for å registrere stedfortredende beslutningstaker eller annen juridisk representant, som for eksempel verge, for individet. Bruk spesifikke arketyper for dette formålet.\r\n\r\nSkal ikke brukes for å dokumentere selve beslutningen tatt i et behandlingsforløp om å avslutte eller begrense medisinsk behandling eller omsorg. Bruk EVALUATION.advance_intervention_decisions aspesifikke for dette formålet.",
+          "originalResourceUri" : { },
+          "otherDetails" : { }
+        },
+        "pt-br" : {
+          "@type" : "RESOURCE_DESCRIPTION_ITEM",
+          "language" : {
+            "terminologyId" : {
+              "value" : "ISO_639-1"
+            },
+            "codeString" : "pt-br"
+          },
+          "purpose" : "Para documentar as preferências de um indivíduo para futuros tratamentos e cuidados médicos.",
+          "keywords" : [ "testamento vital", "diretivas avançadas", "diretrizes avançadas", "decisões avançadas", "diretivas antecipadas", "diretrizes antecipadas", "decisões antecipadas", "preferências de fim de vida", "fim de vida", "não ressuscitar", "ressucitação" ],
+          "use" : "Usar para documentar as preferências de um indivíduo para tratamento e cuidados médicos futuros.\r\n\r\nA diretriz antecipada de cuidados também pode ser conhecida como testamento vital, diretiva antecipada, decisão antecipada, decisão antecipada de recusa de tratamento, diretiva pessoal, diretiva antecipada de saúde ou diretiva médica. Uma diretriz de cuidado antecipado é comumente usada para recusar o tratamento de suporte à vida que pode incluir, mas não está limitado a: ressuscitação cardiopulmonar (RCP); nutrição e hidratação clinicamente assistida; ventilação assistida; e antibióticos para infecções potencialmente fatais. Também pode incluir preferências e instruções para futuras prioridades de cuidados de saúde, condições de vida e assuntos pessoais. Um indivíduo com capacidade pode criar uma diretriz de atendimento antecipado para registrar suas preferências por atendimento médico e tratamento com antecedência, com o objetivo de orientar a tomada de decisões em situações futuras em que o indivíduo seja incapaz de tomar ou comunicar decisões.\r\n\r\nEsse arquétipo foi projetado especificamente como um framework ou estrutura que pode ser estendida para a gama complexa de casos de uso e requisitos locais, acomodando uma variedade de arquétipos CLUSTER possíveis que conterão detalhes específicos de acordo com os requisitos nacionais ou locais.\r\n\r\nEm alguns países, uma diretiva de atendimento antecipado é legalmente persuasiva mesmo sem ter um status legal oficial. Em outros, é um documento juridicamente vinculativo e DEVE ser garantido que o arquétipo da diretiva de atendimento antecipado e quaisquer arquétipos relacionados cumpram os requisitos legais relevantes.",
+          "misuse" : "Não deve ser usado para documentar preferências de doação de órgãos. Use um arquétipo específico para esse propósito.\r\n\r\nNão deve ser usado para registrar detalhes sobre uma procuração ou outro representante legal / procurador. Use um arquétipo específico para esse propósito.\r\n\r\nNão deve ser usado para registrar decisões antecipatórias sobre decisões de RCP, outras decisões de intervenção possíveis e intenção de cuidado, conforme declarado por um médico em um prontuário de saúde. Use o arquétipo EVALUATION.advance_intervention_decisions para esse propósito.",
+          "originalResourceUri" : { },
+          "otherDetails" : { }
+        },
+        "en" : {
+          "@type" : "RESOURCE_DESCRIPTION_ITEM",
+          "language" : {
+            "terminologyId" : {
+              "value" : "ISO_639-1"
+            },
+            "codeString" : "en"
+          },
+          "purpose" : "To record the preferences of an individual for future medical treatment and care.",
+          "keywords" : [ "living, will, advance, advanced, directive, decision, legal, preference, EoL, DNR, DNACPR, resuscitation," ],
+          "use" : "Use to record the preferences of an individual for future medical treatment and care.\r\n\r\nAdvance care directive may also be known as living will, advance directive, advance decision, advance decision to refuse treatment, personal directive, advance healthcare directive, or medical directive. An advance care directive is commonly used to refuse life-sustaining treatment which may include, but is not limited to: cardiopulmonary resuscitation (CPR); clinically assisted nutrition and hydration; assisted ventilation; and antibiotics for life-threatening infections. It could also include positive preferences and instructions for future health care priorities, living arrangements and personal matters. An individual with capacity may create an advance care directive to record their preferences for medical care and treatment in advance, which is intended to guide decision-making in future situations in which the individual is unable to make or communicate decisions. \r\n\r\nThis archetype has been specifically designed as a framework or structure that can be extended for the complex range of use cases and local requirements by nesting a variety of possible CLUSTER archetypes which will contain specific details as per national or other local requirements. \r\n\r\nIn some countries, an advance care directive is legally persuasive without having an official legal status. In others it is a legally-binding document, and it MUST be ensured that the advance care directive archetype and any nested archetypes adhere to relevant legal requirements.",
+          "misuse" : "Not to be used to record organ donation preferences. Use a specific archetype for this purpose.\r\n\r\nNot to be used to record details about a Power of Attorney or other legal representative/proxy. Use a specific archetype for this purpose.\r\n\r\nNot to be used to record anticipatory decisions about CPR decisions, other possible intervention decisions, and intent of care as asserted by a clinician in a health record. Use the EVALUATION.advance_intervention_decisions archetype for this purpose.",
+          "copyright" : "© openEHR Foundation",
+          "originalResourceUri" : { },
+          "otherDetails" : { }
+        },
+        "nl" : {
+          "@type" : "RESOURCE_DESCRIPTION_ITEM",
+          "language" : {
+            "terminologyId" : {
+              "value" : "ISO_639-1"
+            },
+            "codeString" : "nl"
+          },
+          "purpose" : "Voor het vastleggen van de voorkeuren van een individu voor toekomstige medische zorg en behandeling.",
+          "keywords" : [ "Wilsverklaring, reanimatieverklaring, behandelverbod, beslissing, juridisch, voorkeur, levenseinde, reanimeren, NTBR." ],
+          "use" : "Te gebruiken voor het vastleggen van de voorkeuren van een individu voor toekomstige medische zorg en behandeling.\r\n\r\n\"Advance care directive\" kan ook bekend staan als o.a. wilsverklaring of behandelverbod.\r\nEen wilsverklaring wordt vaak gebruikt om levensreddende behandeling te weigeren waaronder, maar niet beperkt tot reanimatie, kunstmatige voeding en vocht toediening, kunstmatige beademing, en antibiotica voor levensbedreigende infecties. Het kan ook positieve voorkeuren of instructies bevatten voor toekomstige prioriteiten van gezondheidszorg, woonsituatie en persoonlijke aangelegenheden. \r\n* (en) \r\nAn individual with capacity may create an advance care directive to record their preferences for medical care and treatment in advance, which is intended to guide decision-making in future situations in which the individual is unable to make or communicate decisions. \r\n\r\nThis archetype has been specifically designed as a framework or structure that can be extended for the complex range of use cases and local requirements by nesting a variety of possible CLUSTER archetypes which will contain specific details as per national or other local requirements. \r\n\r\nIn some countries, an advance care directive is legally persuasive without having an official legal status. In others it is a legally-binding document, and it MUST be ensured that the advance care directive archetype and any nested archetypes adhere to relevant legal requirements.",
+          "misuse" : "*Not to be used to record organ donation preferences. Use a specific archetype for this purpose.\r\n\r\nNot to be used to record details about a Power of Attorney or other legal representative/proxy. Use a specific archetype for this purpose.\r\n\r\nNot to be used to record anticipatory decisions about CPR decisions, other possible intervention decisions, and intent of care as asserted by a clinician in a health record. Use the EVALUATION.advance_intervention_decisions archetype for this purpose.(en)",
+          "originalResourceUri" : { },
+          "otherDetails" : { }
+        }
+      }
     },
     "parentArchetypeId" : "openEHR-EHR-EVALUATION.advance_care_directive.v2",
     "differential" : true,
@@ -5095,64 +4410,28 @@
               "rmTypeName" : "ELEMENT",
               "occurrences" : "0..0",
               "nodeId" : "at0053.1",
-              "attributes" : [ {
-                "@type" : "C_ATTRIBUTE",
-                "rmAttributeName" : "value",
-                "children" : [ {
-                  "@type" : "C_COMPLEX_OBJECT",
-                  "rmTypeName" : "DV_DATE_TIME",
-                  "attributes" : [ ],
-                  "attributeTuples" : [ ]
-                } ]
-              } ],
+              "attributes" : [ ],
               "attributeTuples" : [ ]
             }, {
               "@type" : "C_COMPLEX_OBJECT",
               "rmTypeName" : "ELEMENT",
               "occurrences" : "0..0",
               "nodeId" : "at0054.1",
-              "attributes" : [ {
-                "@type" : "C_ATTRIBUTE",
-                "rmAttributeName" : "value",
-                "children" : [ {
-                  "@type" : "C_COMPLEX_OBJECT",
-                  "rmTypeName" : "DV_DATE_TIME",
-                  "attributes" : [ ],
-                  "attributeTuples" : [ ]
-                } ]
-              } ],
+              "attributes" : [ ],
               "attributeTuples" : [ ]
             }, {
               "@type" : "C_COMPLEX_OBJECT",
               "rmTypeName" : "ELEMENT",
               "occurrences" : "0..0",
               "nodeId" : "at0056.1",
-              "attributes" : [ {
-                "@type" : "C_ATTRIBUTE",
-                "rmAttributeName" : "value",
-                "children" : [ {
-                  "@type" : "C_COMPLEX_OBJECT",
-                  "rmTypeName" : "DV_DATE_TIME",
-                  "attributes" : [ ],
-                  "attributeTuples" : [ ]
-                } ]
-              } ],
+              "attributes" : [ ],
               "attributeTuples" : [ ]
             }, {
               "@type" : "C_COMPLEX_OBJECT",
               "rmTypeName" : "ELEMENT",
               "occurrences" : "0..0",
               "nodeId" : "at0055.1",
-              "attributes" : [ {
-                "@type" : "C_ATTRIBUTE",
-                "rmAttributeName" : "value",
-                "children" : [ {
-                  "@type" : "C_COMPLEX_OBJECT",
-                  "rmTypeName" : "DV_DATE_TIME",
-                  "attributes" : [ ],
-                  "attributeTuples" : [ ]
-                } ]
-              } ],
+              "attributes" : [ ],
               "attributeTuples" : [ ]
             }, {
               "@type" : "C_COMPLEX_OBJECT",
@@ -5357,7 +4636,99 @@
       "otherDetails" : {
         "PARENT:MD5-CAM-1.0.1" : "910577A40659C9665D96E1AFAD01AD44"
       },
-      "details" : { }
+      "details" : {
+        "de" : {
+          "@type" : "RESOURCE_DESCRIPTION_ITEM",
+          "language" : {
+            "terminologyId" : {
+              "value" : "ISO_639-1"
+            },
+            "codeString" : "de"
+          },
+          "purpose" : "Um Details über eine einfache, gesundheitsbezogene Dienstleistung oder Aktivität, die von einem Kliniker, einer Organisation oder einer Behörde erbracht wird, darzustellen.",
+          "keywords" : [ "Überweisung", "Besuch", "Kontakt", "Leistung" ],
+          "use" : "Zur Darstellung einer gesundheitsbezogener Dienstleistung oder Aktivität, die von einem Kliniker, einer Organisation oder einer Behörde bereitgestellt wird. Dies beinhaltet das Verfolgen des Fortschritts von der Planung über die Terminierung und Lieferung bis zur Fertigstellung sowie Abweichungen vom beabsichtigten Behandlungspfad wie Verschiebung oder Stornierung. Dies wird durch die Aufzeichnung relevanter Datenelemente zu bestimmten Aktivitäten erreicht, von denen jede als \"Pathway\"-Prozessschritte in diesem Archetyp beschrieben wird.\r\n\r\nDer Umfang dieses Archetyps umfasst bewusst Aktivitäten für eine breite Palette klinischer Dienstleistungen, um als nicht spezifisches Archetyp für alle Anwendungsfälle zu dienen. Beispiele hierfür sind unter anderem:\r\n- der selbstorganisierte Besuch eines Patienten zu einem vorsorglichen Check-Up bei einem Zahnarzt\r\n- eine Reihe von Besuchen zu einem Physiotherapeuten zur Behandlung einer muskuloskelettalen Belastung\r\n- die Überweisung einen anfordernden Gesundheitsdienstleister, wie zum Beispiel eines Hausarztes, an einen aufnehmenden Gesundheitsdienstleister, wie zum Beispiel einem Facharzt damit der Patient eine bestimmte Dienstleistung, Beratung oder Pflege erhält.\r\n\r\nZusätzliche strukturierte und ausführliche Informationen über diese Dienstleistung können, unter Verwendung eines spezifischen Archetyps der in den SLOT \"Dienstleistungsdetails\" integriert wird, dokumentiert werden.\r\n\r\nDieser Archetyp kann auf zwei Arten verwendet werden:\r\n- als vollständige Darstellung der erbrachten Dienstleistung, oder\r\n- als Rahmen um vorrangig den Status der angeforderten Leistung und separaten OBSERVATION-Archetypen um die eigentlichen Testergebnisse für die erbrachte Dienstleistung darzustellen. Zum Beispiel mit dem Archetyp OBSERVATION.hearing_screening_result.\r\n\r\nDie Zeitplanung im Zusammenhang mit einer Dienstleistung kann auf eine von zwei Arten verwaltet werden:\r\n- durch die Verwendung des Referenzmodells - die Zeit für die Ausführung eines Schritts im Prozess wird das Zeitattribut des ACTION-Archetyps für jeden Schritt verwendet.\r\n- durch die Verwendung von Archetyp-Datenelemente - das Datenfeld \"Geplantes Datum/geplante Uhrzeit\" ist dafür gedacht einen Zeitpunkt aufzuzeichnen, zu der die Dienstleistung durchgeführt werden sollte. Hinweis: Das zugehörige ACTION-Zeitattribut für den geplanten Prozessschritt wird die Zeit aufzeichnen, zu der die klinische Aktivität in ein System eingeplant wurde, nicht das beabsichtigte Datum/die beabsichtigte Uhrzeit, an dem die Aktivität durchgeführt werden soll.\r\n\r\nIn der Praxis werden einige Dienstleistungen (zum Beispiel in der ambulanten Versorgung) einmalig erbracht und nicht im Voraus bestellt. Die Details zu dieser Dienstleistung werden gegen den Schritt im Pfad \"Dienstleistung abgeschlossen\" hinzugefügt. In einigen Fällen wird eine wiederkehrende Dienstleistung bestellt, und in diesem Fall werden bei jeder Gelegenheit Daten unter dem Schritt \"Dienstleistung erbracht\" erfasst, wobei die Anweisung im aktiven Zustand bleibt. Wenn die letzte Erbringung der Dienstleistung erfasst wird, wird die Aktion \"Dienstleistung abgeschlossen\" aufgezeichnet, um anzuzeigen, dass diese Anforderung nun im abgeschlossenen Zustand ist.\r\n\r\nIn anderen Situationen, wie der sekundären Versorgung, gibt es möglicherweise eine formelle Anforderung einer Dienstleistung die dem Archetyp INSTRUCTION.request entspricht. Dieser ACTION-Archetyp kann dann verwendet werden um den Arbeitsablauf und die Durchführung der Anforderung zu beschreiben.\r\n\r\nDie Darstellung von Informationen mit Hilfe dieses ACTION-Archetyps deutet darauf hin, dass eine Art von Aktivität tatsächlich stattgefunden hat. In der Regel handelt es sich dabei um eine tatsächliche Erbringung der Dienstleistung, kann jedoch auch einen fehlgeschlagenen Versuch oder eine andere Aktivität wie die Verschiebung der Dienstleistung umfassen. Wenn es eine formelle Anforderung für die Dienstleistung gibt, wird der Status dieser Bestellung durch den Pathway-Schritt repräsentiert, gegen den die Daten aufgezeichnet werden. Zum Beispiel kann der Fortschrittszustand einer Überweisungsanfrage mithilfe dieses Archetyps durch separate Einträge in den Fortschrittsnotizen der EHR bei jedem \"Pathway\"-Schritt erfasst werden:\r\n- Aufzeichnung eines geplanten Startdatums/geplanter Uhrzeit für die Überweisung (Dienstleistung angesetzt), oder\r\n- Aufzeichnung über eine vollständig erbrachte Überweisung, möglicherweise mit zusätzlichen Informationen zur erbrachten Dienstleistung (Dienstleistung abgeschlossen).\r\n\r\nWenn die Aktivitäten den üblichen Geplanten > Angesetzten > Aktiven > Abgeschlossenen Zuständen folgen, ist es in der Regel nicht notwendig, einen \"Grund\" aufzuzeichnen - vielmehr wird er in der Regel verwendet, um den Grund für Abweichungen vom typischen Versorgungspfad zu protokollieren.\r\n\r\nBitte beachten Sie, dass im openEHR-Referenzmodell ein 'Time'-Attribut vorhanden ist, das dazu dient, Datum und Uhrzeit zu erfassen, zu welchem Zeitpunkt jeder Schritt des Pfades der Aktion durchgeführt wurde. Dies ist das Attribut, das verwendet werden sollte, um den Beginn der Prozedur (unter Verwendung des Schritts \"Dienstleistung erbracht\") oder die Zeit zu protokollieren, zu der der Leistung abgebrochen wurde (unter Verwendung des Schritts \"Dienstleistung eingestellt\").",
+          "misuse" : "Nicht zur Darstellung von Informationen über durchgeführte Aktivitäten die spezielle Archetypen benötigen, weil sie eine sehr spezifische Datenerfassung oder Anforderungen an Schritte des Pfades haben. Zum Beispiel: ACTION.procedure oder ACTION.health_education.",
+          "originalResourceUri" : { },
+          "otherDetails" : { }
+        },
+        "nb" : {
+          "@type" : "RESOURCE_DESCRIPTION_ITEM",
+          "language" : {
+            "terminologyId" : {
+              "value" : "ISO_639-1"
+            },
+            "codeString" : "nb"
+          },
+          "purpose" : "For å registrere detaljer om en enkel helserelatert tjeneste eller aktivitet utført av en kliniker, organisasjon eller virksomhet.",
+          "keywords" : [ "henvisning", "konsultasjon", "kontakt" ],
+          "use" : "Brukes for å registrere detaljer om en enkel helserelatert tjeneste eller aktivitet utført av en kliniker, organisasjon eller virksomhet. Dette omfatter sporing av fremdrift fra planlegging, via tidfesting og utførelse til fullføring, i tillegg til avvik fra det tilsiktede forløpet, for eksempel utsettelse eller avlysning. Dette gjøres ved å registrere informasjon i relevante dataelementer om de spesifikke prosesstrinnene i arketypen.\r\n\r\nDenne arketypen omfatter aktiviteter for et bredt spekter av ukomplekse kliniske tjenester, for eksempel:\r\n- egenhenvisning fra en pasient for kontroll hos tannlege til forebyggende behandling\r\n- en serie konsultasjoner hos en fysioterapeut til behandling av muskel/skjelettbelastning\r\n- en henvisning fra bestillende helsepersonell, for eksempel en fastlege, til mottakende helsepersonell, for eksempel et sykehus, for at pasienten skal motta en bestemt tjeneste, råd eller behandling.\r\n\r\nYtterligere strukturert og detaljert informasjon om tjenesten kan registreres ved å bruke formålsspesifikke arketyper i SLOTet \"Tjenestedetaljer\", der det er nødvendig.\r\n\r\nDenne arketypen kan brukes på to måter:\r\n- som en fullstendig oversikt over tjenesten som ble levert; eller\r\n- som et rammeverk for å registrere tilstanden til den forespurte tjenesten, med separate OBSERVATION-arketyper i samme templat, og som brukes til å registrere de faktiske resultatene av den leverte tjenesten - for eksempel OBSERVATION.hearing_screening_result\r\n\r\nTidspunkter knyttet til en tjeneste kan administreres på en av to måter:\r\n- ved å bruke referansemodellen - tiden for utførelse av ethvert prosesstrinn vil benytte ACTION time referansemodell-attributtet for hvert trinn; eller\r\n- ved bruk av arketypedata - dataelementet \"Tidfestet dato/tid\" er ment å registrere det nøyaktige tidspunktet når tjenesten er planlagt utført. Merk: det tilsvarende ACTION-tidsattributtet for trinnet \"Tjeneste tidfestet\" vil registrere tiden da tjenesten ble planlagt i et system, ikke den tiltenkte dato/klokkeslett som tjenesten er ment å bli utført på.\r\n\r\nI praksis vil enkelte tjenester (for eksempel innen dagbehandling) skje én gang og ikke bestilles og planlagges på forhånd. Detaljene om tjenesten vil bli lagt direkte til i prosesstrinnet, \"Tjeneste fullført\". I andre tilfeller vil en gjentakende tjeneste bli bestilt, og i denne situasjonen vil data knyttet til trinnet '\"Tjeneste utført\" bli registrert ved hver repetisjon av tjenesten, slik at den overordnede helsetjenesteaktiviteten blir værende i aktiv tilstand. Når siste tjeneste er registrert, benyttes prosesstrinnet \"Tjeneste fullført\" som viser at denne bestillingen nå er i fullført tilstand.\r\n\r\nI andre situasjoner, for eksempel andrelinjetjeneste, kan det være en formell bestilling av en tjeneste ved bruk av en tilsvarende INSTRUCTION.service_request-arketype. Denne ACTION-arketypen kan deretter brukes til å registrere arbeidsflyten for når og hvordan bestillingen er utført.\r\n\r\nVed registrering av informasjon ved hjelp av denne arketypen indikeres det at en aktivitet faktisk har skjedd. Dette vil som oftest være tjenesteleveransen i seg selv, kan kan også være et mislykket forsøk eller en utsettelse. Dersom det finnes en formell ordinering av tjenesten, representeres statusen for ordinering ved prosesstrinnet som registreres. For eksempel kan denne arketypen brukes til å følge fremgangen i behandlingen av en henvisning gjennom separate journaloppføringer, hver med sitt prosesstrinn:\r\n- registrere dato/tiden tjenesten er ment utført på ved hjelp av elementet \"Planlagt dato/id\" og prosesstrinnet \"Tjeneste tidfestet\"\r\n- registrere at henvisningen er fullført, potensielt inkludert informasjon om den leverte tjenesten, og prosesstrinnet \"Tjeneste fullført\"\r\n\r\nDersom aktivitetene følger den vanlige flyten Planlagt > Tidfestet > Aktiv > Fullført, er det som regel ikke nødvendig å registrere en \"Årsak\". Elementet \"Årsak\" er ment brukt for å angi hvorfor et forløp avviker fra den typiske flyten.\r\n\r\nVær oppmerksom på at i openEHR referansemodellen er det et \"Time\"-attributt, som er ment å registrere når hvert prosesstrinn i tjenesteaktiviteten ble utført. Dette er attributtet som skal brukes til å registrere starttidspunktet for tjenesteutføringen (ved å bruke prosesstrinnet 'Tjeneste utført') eller tidspunktet da tjenesten ble avbrutt (ved å bruke prosesstrinnet 'Tjeneste avbrutt').",
+          "misuse" : "Skal ikke brukes til å registrere data om utførte aktiviteter som krever en spesialbygd ACTION-arketype fordi de har svært spesifikke data eller krav til prosesstrinn. For eksempel: ACTION.procedure eller ACTION.health_education.",
+          "originalResourceUri" : { },
+          "otherDetails" : { }
+        },
+        "pt-br" : {
+          "@type" : "RESOURCE_DESCRIPTION_ITEM",
+          "language" : {
+            "terminologyId" : {
+              "value" : "ISO_639-1"
+            },
+            "codeString" : "pt-br"
+          },
+          "purpose" : "*To record details about a health-related service or activity delivered by a clinician, organisation or agency. This includes tracking progress from planning, via scheduling and delivery to completion, as well as deviations from the intended care path such as postponement or cancellation. (en)",
+          "keywords" : [ "referência", "visita", "encontro" ],
+          "use" : "*To record details about a health-related service or activity delivered by a clinician, organisation or agency. This includes tracking progress from planning, via scheduling and delivery to completion, as well as deviations from the intended care path such as postponement or cancellation. This is achieved by the recording of relevant data elements about specific activities, each of which are described as the 'Pathway' careflow steps in this archetype.\r\n\r\nThe scope of this archetype deliberately encompasses activities for a broad range of clinical services, to act as a non-specific archetype for all use cases. Examples include, but are not limited to:\r\n- self-referral by a patient for a check-up visit to a dentist for preventive care\r\n- a series of visits to a physiotherapist for management of a musculoskeletal strain; and\r\n- a referral from a requesting healthcare provider, such as a primary care clinician, to a receiving healthcare provider, such as a specialist, for the patient to receive a specific service, advice or care.\r\n\r\nAdditional structured and detailed information about the service can be captured using purpose-specific archetypes inserted into the 'Service detail' slot, where required.\r\n\r\nThis archetype may only be used in two ways:\r\n- as a full record of the service that was delivered; or\r\n- as a framework to record primarily the state of the requested service, with separate OBSERVATION archetypes used to record the actual test results for the delivered service - for example OBSERVATION.hearing_screening_result.\r\n\r\nTimings related to service management can be managed in one of two ways:\r\n- Using the reference model - the time for performance of any pathway step will use the ACTION time attribute for each step.\r\n- Archetyped data elements - the 'Scheduled date/time' data element is intended to record the time when the service was intended to be carried out. Note: the corresponding ACTION time attribute for the Scheduled pathway step will record the time that the clinical activity was scheduled into a system, not the intended date/time on which the activity is intended to be carried out.\r\n\r\nIn practice, some services (for example, in ambulatory care) will occur once and not be ordered in advance. The details about the service will be added against the pathway step, 'Service completed'. In some cases a recurring service will be ordered, and in this situation data against the 'Service delivered' step will be recorded on each occasion, leaving the instruction in the active state. When the last delivery of the service is recorded, the 'Service completed' action is recorded showing that this order is now in the completed state.\r\n\r\nIn other situations, such as secondary care, there may be a formal order for a service using a corresponding INSTRUCTION.request archetype. This ACTION archetype can then be used to record the workflow of when and how the order has been carried out.\r\n\r\nRecording information using this ACTION archetype indicates that some sort of activity has actually occurred; this will usually be the service delivery itself but may be a failed attempt or another activity such as postponement of the service delivery. If there is a formal order for the service, the state of this order is represented by the Pathway step against which the data is recorded. For example, using this archetype the progressing state of a referral request may be recorded through separate entries in the EHR progress notes at each 'Pathway' step:\r\n- record the scheduled Start date/time for the referral (Service scheduled); and\r\n- record that the referral has been completed, potentially including information about the service delivered (Service completed).\r\n\r\nWhen the activities follow the usual Planned > Scheduled > Active > Completed states, recording a 'Reason' is not usually necessary - rather, it is usually used to record the reason for deviation from the typical care pathway.\r\n\r\nPlease note that in the openEHR Reference Model there is a 'Time' attribute, which is intended to record the date and time at which each pathway step of the Action was performed. This is the attribute to use to record the start of the service (using the 'Service delivered' pathway step) or the time that the service was aborted (using the 'Service abandoned' pathway step). (en)",
+          "misuse" : "Não deve ser usado para registrar dados sobre atividades realizadas para atividades que exigem um arquétipo ACTION construído para esse fim, pois elas possuem requisitos muito específicos de registro de dados ou de etapas do caminho. Por exemplo: ACTION.procedure ou ACTION.health_education.",
+          "originalResourceUri" : { },
+          "otherDetails" : { }
+        },
+        "en" : {
+          "@type" : "RESOURCE_DESCRIPTION_ITEM",
+          "language" : {
+            "terminologyId" : {
+              "value" : "ISO_639-1"
+            },
+            "codeString" : "en"
+          },
+          "purpose" : "To record details about a simple health-related service or activity delivered by a clinician, organisation or agency.",
+          "keywords" : [ "referral", "visit", "encounter" ],
+          "use" : "To record details about a simple health-related service or activity delivered by a clinician, organisation or agency. This includes tracking progress from planning, via scheduling and delivery to completion, as well as deviations from the intended care path such as postponement or cancellation. This is achieved by the recording of relevant data elements about specific activities, each of which are described as the 'Pathway' careflow steps in this archetype.\r\n\r\nThe scope of this archetype deliberately encompasses activities for a broad range of clinical services, to act as a non-specific archetype for all non-complex use cases. Examples include, but are not limited to:\r\n- self-referral by a patient for a check-up visit to a dentist for preventive care\r\n- a series of visits to a physiotherapist for management of a musculoskeletal strain; and\r\n- a referral from a requesting healthcare provider, such as a primary care clinician, to a receiving healthcare provider, such as a specialist, for the patient to receive a specific service, advice or care.\r\n\r\nAdditional structured and detailed information about the service can be captured using purpose-specific archetypes inserted into the 'Service detail' slot, where required.\r\n\r\nThis archetype may only be used in two ways:\r\n- as a full record of the service that was delivered; or\r\n- as a framework to record primarily the state of the requested service, with separate OBSERVATION archetypes used to record the actual test results for the delivered service - for example OBSERVATION.hearing_screening_result.\r\n\r\nTimings related to service management can be managed in one of two ways:\r\n- Using the reference model - the time for performance of any pathway step will use the ACTION time attribute for each step.\r\n- Archetyped data elements - the 'Scheduled date/time' data element is intended to record the time when the service was intended to be carried out. Note: the corresponding ACTION time attribute for the Scheduled pathway step will record the time that the clinical activity was scheduled into a system, not the intended date/time on which the activity is intended to be carried out.\r\n\r\nIn practice, some services (for example, in ambulatory care) will occur once and not be ordered in advance. The details about the service will be added against the pathway step, 'Service completed'. In some cases a recurring service will be ordered, and in this situation data against the 'Service delivered' step will be recorded on each occasion, leaving the instruction in the active state. When the last delivery of the service is recorded, the 'Service completed' action is recorded showing that this order is now in the completed state.\r\n\r\nIn other situations, such as secondary care, there may be a formal order for a service using a corresponding INSTRUCTION.request archetype. This ACTION archetype can then be used to record the workflow of when and how the order has been carried out.\r\n\r\nRecording information using this ACTION archetype indicates that some sort of activity has actually occurred; this will usually be the service delivery itself but may be a failed attempt or another activity such as postponement of the service delivery. If there is a formal order for the service, the state of this order is represented by the Pathway step against which the data is recorded. For example, using this archetype the progressing state of a referral request may be recorded through separate entries in the EHR progress notes at each 'Pathway' step:\r\n- record the scheduled Start date/time for the referral (Service scheduled); and\r\n- record that the referral has been completed, potentially including information about the service delivered (Service completed).\r\n\r\nWhen the activities follow the usual Planned > Scheduled > Active > Completed states, recording a 'Reason' is not usually necessary - rather, it is usually used to record the reason for deviation from the typical care pathway.\r\n\r\nPlease note that in the openEHR Reference Model there is a 'Time' attribute, which is intended to record the date and time at which each pathway step of the Action was performed. This is the attribute to use to record the start of the service (using the 'Service delivered' pathway step) or the time that the service was aborted (using the 'Service abandoned' pathway step).",
+          "misuse" : "Not to be used to record data about activities carried out for activities that require a purpose built ACTION archetype because they have very specific data recording or pathway step requirements. For example: ACTION.procedure or ACTION.health_education.",
+          "copyright" : "© openEHR Foundation, Northern Territory Department of Health (Australia)",
+          "originalResourceUri" : { },
+          "otherDetails" : { }
+        },
+        "zh-cn" : {
+          "@type" : "RESOURCE_DESCRIPTION_ITEM",
+          "language" : {
+            "terminologyId" : {
+              "value" : "ISO_639-1"
+            },
+            "codeString" : "zh-cn"
+          },
+          "purpose" : "旨在用于记录关于临床医务人员、组织机构或代理机构/服务机构所提供的，简单的，与健康相关的服务或活动的详情。",
+          "keywords" : [ "服务", "服务项目", "转诊", "转诊介绍", "转介", "推荐", "推介", "就诊", "就医", "访视", "就医", "就医过程", "接触", "健康医疗服务接触" ],
+          "use" : "旨在用于记录关于临床医务人员、组织机构或代理机构/服务机构所提供的，简单的，与健康相关的服务或活动的详情。其中包括追踪从计划编制/规划、排程/排期、提供/交付服务直至完成的整个过程的进展情况，以及相对于既定照护服务/诊疗路径的偏差/偏离情况（如服务延期或取消）。为此，实现的方式就是，在本原始型当中，记录特定活动的相关数据元，并将这些数据元均描述为“路径”（Pathway）照护服务/诊疗流程步骤。\r\n\r\n本原始型的适用范围有意涵盖了各类临床服务的活动，旨在作为适用于所有非复杂用例的通用原始型。示例包括但不限于：\r\n- 患者为接受预防性照护/诊疗服务，自行提出的牙科健康检查转诊；\r\n- 患者因肌肉骨骼劳损接受治疗而前往物理治疗师处的一系列就诊；\r\n- 转诊：由请求方健康医疗服务提供者（如初级保健/基层临床医务人员）将患者转诊至接收方健康医疗服务提供者（如专科医生），以便让患者获得特定的服务、建议或照护/诊疗服务。\r\n\r\n如需记录有关该服务的更多结构化详情，可在“服务详情”（Service detail）插槽中插入专用原始型。\r\n\r\n仅可采取下列两种方式来使用本原始型：\r\n- 作为关于所提供服务的完整记录；\r\n- 作为主要记录所请求服务的状态的框架，同时利用单独的观察类原始型（OBSERVATION）来记录所提供服务的实际观察（检验/检查）结果，如观察类听力筛查结果原始型（OBSERVATION.hearing_screening_result）。\r\n\r\n可以采取下列两种方式之一来管理那些与服务[项目]管理相关的时间：\r\n- 利用参考模型：任何路径步骤的执行时间均会采用各步骤的行动类（ACTION）时间属性。\r\n- 原始型化数据元：“所排程的日期/时间”（Scheduled date/time）数据元旨在用于记录当时预定执行此项服务的时间。注：“已排程”（Scheduled）路径步骤相应的行动类时间属性，将记录的是当时将此项临床活动排程到系统当中的时间，而并非预定开展/执行此项活动的预定日期/时间。\r\n\r\n在实际工作中，部分的服务（如门诊照护/诊疗过程中）为即时开展，仅会发生一次，无需提前下达医嘱。关于此类服务的详情，将会在“服务已完成”（Service completed）路径步骤下录入相关的数据。在某些情况下，会下达关于重复型服务的医嘱，而此时，对于此类服务的每次重复，将会在“服务已提供”（Service delivered）路径步骤下记录相关的数据，并保持服务医嘱处于有效状态。当记录最后一次的服务提供情况时，则记录的是“服务已完成”行动，以表明此项服务医嘱已处于已完成状态。\r\n\r\n在其他的情况下（如二级照护/诊疗服务），可能会利用相应的指令类请求原始型（INSTRUCTION.request）来表达针对特定服务的正式医嘱。随后，则可以利用这一行动类原始型来记录关于开展/执行此项医嘱的时间和方式等工作流信息。\r\n\r\n采用这一行动类原始型来记录信息，表明已实际发生某项活动；此项活动通常为相应的服务提供过程本身，但也可能是一次失败的尝试，或者是其他的活动（如服务提供的延期）。若此项服务存在正式的医嘱，则会采用相应的“路径”步骤来表达该项医嘱的状态。例如，在每个“路径”步骤当中，可以在电子健康档案（EHR）病程/进展记录里，采用单独的条目来记录转诊请求的进展状态：\r\n- 记录转诊的已排程的开始日期/时间（“服务已排程”）；\r\n- 记录转诊已完成，并且有可能包括所提供服务的相关信息（“服务已完成”）。\r\n\r\n当活动遵循的是“计划中（Planned）> 已排程（Scheduled）> 进行中（Active）> 已完成（Completed）”的常规状态流程时，通常无需记录“原因”（Reason）；该原因字段通常用于记录偏离常规诊疗/照护服务路径的原因。\r\n\r\n请注意，在openEHR参考模型当中，存在“时间”（Time）属性，旨在用于记录相应“行动”（Action）之中每个路径步骤的执行日期和时间。而且，服务开始时间（需采用“服务已提供”路径步骤）或服务中止时间（需采用“服务已中止”路径步骤）也都将采用该属性来记录。",
+          "misuse" : "并非旨在用于记录关于所开展/执行的那些需要采用专用行动类原始型的活动的数据，因为此类活动有着非常特殊的数据记录要求或路径步骤要求。例如：行动类操作原始型（ACTION.procedure）或行动类健康宣教原始型（ACTION.health_education）。",
+          "originalResourceUri" : { },
+          "otherDetails" : { }
+        },
+        "nl" : {
+          "@type" : "RESOURCE_DESCRIPTION_ITEM",
+          "language" : {
+            "terminologyId" : {
+              "value" : "ISO_639-1"
+            },
+            "codeString" : "nl"
+          },
+          "purpose" : "Om gegevens vast te leggen over een eenvoudige gezondheidsgerelateerde dienst of activiteit geleverd door een arts, organisatie of instantie.",
+          "keywords" : [ "verwijzing", "bezoek" ],
+          "use" : "Om gegevens vast te leggen over een eenvoudige gezondheidsgerelateerde dienst of activiteit geleverd door een arts, organisatie of instantie. Dit omvat het bijhouden van de voortgang van planning, via het maken van afspraken en levering tot voltooiing, evenals afwijkingen van het geplande zorgpad zoals uitstel of annulering. Dit wordt bereikt door het vastleggen van relevante gegevenselementen over specifieke activiteiten, die in dit archetype elk worden beschreven als de zorgstroomstappen 'Pathway'.\r\n\r\nDe reikwijdte van dit archetype omvat bewust activiteiten voor een breed scala aan klinische diensten, om te fungeren als een niet-specifiek archetype voor alle niet-complexe use cases. Voorbeelden zijn onder andere\r\n- zelfverwijzing door een patiënt voor een controlebezoek aan een tandarts voor preventieve zorg\r\n- een reeks bezoeken aan een fysiotherapeut voor de behandeling van een overbelasting van het bewegingsapparaat; en\r\n- een verwijzing van een aanvragende zorgverlener, zoals een huisarts, naar een ontvangende zorgverlener, zoals een specialist, om de patiënt een specifieke dienst, advies of zorg te laten ontvangen.\r\n\r\nAanvullende gestructureerde en gedetailleerde informatie over de dienst kan worden vastgelegd met behulp van doel-specifieke archetypes die waar nodig worden ingevoegd in de sleuf \"Dienstinformatie\".\r\n\r\nDit archetype mag slechts op twee manieren worden gebruikt:\r\n- als een volledig verslag van de geleverde dienst; of\r\n- als een kader om voornamelijk de status van de gevraagde dienst vast te leggen, met afzonderlijke OBSERVATION-archetypes die gebruikt worden om de eigenlijke testresultaten voor de geleverde dienst vast te leggen - bijvoorbeeld OBSERVATION.hearing_screening_result.\r\n\r\nTimings met betrekking tot servicebeheer kunnen op twee manieren worden beheerd:\r\n- Met behulp van het referentiemodel - de tijd voor de uitvoering van elke padstap zal het ACTION tijd-attribuut voor elke stap gebruiken.\r\n- Archetypische gegevenselementen - het gegevenselement \"Geplande datum/tijd\" is bedoeld om het tijdstip vast te leggen waarop de dienst uitgevoerd zou worden. Opmerking: het overeenkomstige ACTION tijd-attribuut voor de stap Geplande route registreert het tijdstip waarop de klinische activiteit in een systeem werd gepland, niet de beoogde datum/tijd waarop de activiteit zou worden uitgevoerd.\r\n\r\nIn de praktijk zullen sommige diensten (bijvoorbeeld in de ambulante zorg) eenmalig plaatsvinden en niet vooraf besteld worden. De gegevens over de dienst worden toegevoegd aan de stap 'Dienst voltooid'. In sommige gevallen wordt een terugkerende dienst besteld, en in deze situatie worden de gegevens voor de stap \"Geleverde dienst\" bij elke gelegenheid geregistreerd, waardoor de instructie in de actieve status blijft. Wanneer de laatste levering van de dienst wordt geregistreerd, wordt de actie 'Dienst voltooid' geregistreerd, wat aangeeft dat deze opdracht nu in de status 'voltooid' staat.\r\n\r\nIn andere situaties, zoals secundaire zorg, kan er een formele opdracht zijn voor een dienst met behulp van een overeenkomstig INSTRUCTION.request archetype. Dit ACTION archetype kan dan worden gebruikt om de workflow vast te leggen van wanneer en hoe de opdracht is uitgevoerd.\r\n\r\nHet vastleggen van informatie met behulp van dit ACTION archetype geeft aan dat een of andere activiteit daadwerkelijk heeft plaatsgevonden; dit zal meestal de dienstlevering zelf zijn, maar het kan ook een mislukte poging zijn of een andere activiteit zoals uitstel van de dienstlevering. Als er een formele order is voor de dienst, wordt de status van deze order weergegeven door de Pathway stap waartegen de gegevens worden geregistreerd. Bij gebruik van dit archetype kan de voortgang van een verwijzingsverzoek bijvoorbeeld worden vastgelegd door middel van afzonderlijke vermeldingen in de voortgangsnotities van het EPD bij elke stap van het pad:\r\n- de geplande begindatum/tijd voor de verwijzing vastleggen (dienst gepland); en\r\n- vastleggen dat de verwijzing voltooid is, eventueel met informatie over de geleverde dienst (dienst voltooid).\r\n\r\nAls de activiteiten de gebruikelijke Gepland > Afspraak gemaakt > Actief > Voltooid toestanden volgen, is het vastleggen van een 'Reden' meestal niet nodig - het wordt eerder gebruikt om de reden voor afwijking van het typische zorgpad vast te leggen.\r\n\r\nLet op dat er in het openEHR Referentiemodel een attribuut 'Tijd' is, dat bedoeld is om de datum en tijd vast te leggen waarop elke stap in het zorgpad van de Actie werd uitgevoerd. Dit is het te gebruiken attribuut voor het vastleggen van de start van de dienst (bij gebruik van de stap 'Geleverde dienst') of de tijd dat de dienst werd afgebroken (bij gebruik van de stap 'Dienst afgebroken').",
+          "misuse" : "Niet te gebruiken om gegevens vast te leggen over uitgevoerde activiteiten voor activiteiten waarvoor een speciaal gebouwd ACTION-archetype nodig is omdat zij zeer specifieke vereisten inzake gegevensregistratie of trajectstappen hebben. Bijvoorbeeld: ACTION.procedure of ACTION.health_education.",
+          "originalResourceUri" : { },
+          "otherDetails" : { }
+        }
+      }
     },
     "parentArchetypeId" : "openEHR-EHR-ACTION.service.v1",
     "differential" : true,
@@ -5947,16 +5318,7 @@
               "rmTypeName" : "ELEMENT",
               "occurrences" : "0..0",
               "nodeId" : "at0025.1",
-              "attributes" : [ {
-                "@type" : "C_ATTRIBUTE",
-                "rmAttributeName" : "value",
-                "children" : [ {
-                  "@type" : "C_COMPLEX_OBJECT",
-                  "rmTypeName" : "DV_DATE_TIME",
-                  "attributes" : [ ],
-                  "attributeTuples" : [ ]
-                } ]
-              } ],
+              "attributes" : [ ],
               "attributeTuples" : [ ]
             }, {
               "@type" : "C_COMPLEX_OBJECT",
@@ -6077,6 +5439,948 @@
       "conceptCode" : "at0000",
       "termDefinitions" : {
         "en" : { },
+        "pt-br" : { },
+        "de" : { },
+        "nb" : { },
+        "nl" : { },
+        "zh-cn" : { }
+      },
+      "termBindings" : { },
+      "terminologyExtracts" : { },
+      "valueSets" : { }
+    },
+    "adlVersion" : "1.4",
+    "buildUid" : "69057fa2-9ad3-493e-817a-218f3b8d07f3",
+    "rmName" : "openehr",
+    "rmRelease" : "1.1.0",
+    "generated" : true,
+    "otherMetaData" : { },
+    "originalLanguage" : {
+      "terminologyId" : {
+        "value" : "ISO_639-1"
+      },
+      "codeString" : "en"
+    },
+    "translations" : [ {
+      "@type" : "TRANSLATION_DETAILS",
+      "language" : {
+        "terminologyId" : {
+          "value" : "ISO_639-1"
+        },
+        "codeString" : "de"
+      },
+      "author" : {
+        "name" : "Eva-Maria Rieß, Natalia Strauch",
+        "organisation" : "Universitätsmedizin Göttingen, Medizinische Hochschule Hannover",
+        "email" : "eva-maria.riess@med.uni-goettingen.de, Strauch.Natalia@mh-hannover.de"
+      },
+      "otherDetails" : { }
+    }, {
+      "@type" : "TRANSLATION_DETAILS",
+      "language" : {
+        "terminologyId" : {
+          "value" : "ISO_639-1"
+        },
+        "codeString" : "nb"
+      },
+      "author" : {
+        "name" : "Silje Ljosland Bakke, John Tore Valand, Terje Sagmyr",
+        "organisation" : "Helse Vest IKT AS",
+        "email" : "silje.ljosland.bakke@helse-vest-ikt.no, john.tore.valand@helse-vest-ikt.no, terje.sagmyr@helse-vest-ikt.no"
+      },
+      "otherDetails" : { }
+    }, {
+      "@type" : "TRANSLATION_DETAILS",
+      "language" : {
+        "terminologyId" : {
+          "value" : "ISO_639-1"
+        },
+        "codeString" : "pt-br"
+      },
+      "author" : {
+        "name" : "Ana Paula Pannuti, Débora Farage, Adriana Kitajima, Fernanda Maia e Clóvis Puttini.",
+        "organisation" : "Core Consulting",
+        "email" : "ana.andrade@coreconsulting.com.br"
+      },
+      "otherDetails" : { }
+    }, {
+      "@type" : "TRANSLATION_DETAILS",
+      "language" : {
+        "terminologyId" : {
+          "value" : "ISO_639-1"
+        },
+        "codeString" : "zh-cn"
+      },
+      "author" : {
+        "name" : "Lin Zhang",
+        "organisation" : "Freelancer",
+        "email" : "linforest@163.com"
+      },
+      "otherDetails" : { }
+    }, {
+      "@type" : "TRANSLATION_DETAILS",
+      "language" : {
+        "terminologyId" : {
+          "value" : "ISO_639-1"
+        },
+        "codeString" : "nl"
+      },
+      "author" : {
+        "name" : "Mattijs Kuhlmann",
+        "organisation" : "Nedap",
+        "email" : "mattijs.kuhlmann@nedap.com"
+      },
+      "otherDetails" : { }
+    } ]
+  }, {
+    "@type" : "TEMPLATE_OVERLAY",
+    "uid" : "47d571c0-fa1a-47ae-8a4c-2b2344dbc00d",
+    "description" : {
+      "@type" : "RESOURCE_DESCRIPTION",
+      "originalAuthor" : { },
+      "otherContributors" : [ ],
+      "ipAcknowledgements" : { },
+      "references" : { },
+      "conversionDetails" : { },
+      "otherDetails" : {
+        "PARENT:MD5-CAM-1.0.1" : "910577A40659C9665D96E1AFAD01AD44"
+      },
+      "details" : { }
+    },
+    "parentArchetypeId" : "openEHR-EHR-ACTION.service.v1",
+    "differential" : true,
+    "archetypeId" : {
+      "@type" : "ARCHETYPE_HRID",
+      "value" : "openEHR-EHR-ACTION.ovl-service-002.v1"
+    },
+    "definition" : {
+      "@type" : "C_COMPLEX_OBJECT",
+      "rmTypeName" : "ACTION",
+      "nodeId" : "at0000.1",
+      "attributes" : [ {
+        "@type" : "C_ATTRIBUTE",
+        "rmAttributeName" : "ism_transition",
+        "children" : [ {
+          "@type" : "C_COMPLEX_OBJECT",
+          "rmTypeName" : "ISM_TRANSITION",
+          "occurrences" : "0..0",
+          "nodeId" : "at0002.1",
+          "attributes" : [ {
+            "@type" : "C_ATTRIBUTE",
+            "rmAttributeName" : "current_state",
+            "children" : [ {
+              "@type" : "C_COMPLEX_OBJECT",
+              "rmTypeName" : "DV_CODED_TEXT",
+              "attributes" : [ {
+                "@type" : "C_ATTRIBUTE",
+                "rmAttributeName" : "defining_code",
+                "children" : [ {
+                  "@type" : "C_TERMINOLOGY_CODE",
+                  "rmTypeName" : "CODE_PHRASE",
+                  "occurrences" : "1..1",
+                  "terminologyId" : {
+                    "value" : "openehr"
+                  },
+                  "constraint" : [ "526" ]
+                } ]
+              } ],
+              "attributeTuples" : [ ]
+            } ]
+          }, {
+            "@type" : "C_ATTRIBUTE",
+            "rmAttributeName" : "careflow_step",
+            "children" : [ {
+              "@type" : "C_COMPLEX_OBJECT",
+              "rmTypeName" : "DV_CODED_TEXT",
+              "attributes" : [ {
+                "@type" : "C_ATTRIBUTE",
+                "rmAttributeName" : "defining_code",
+                "children" : [ {
+                  "@type" : "C_TERMINOLOGY_CODE",
+                  "rmTypeName" : "CODE_PHRASE",
+                  "occurrences" : "1..1",
+                  "terminologyId" : {
+                    "value" : "local"
+                  },
+                  "constraint" : [ "at0002" ]
+                } ]
+              } ],
+              "attributeTuples" : [ ]
+            } ]
+          } ],
+          "attributeTuples" : [ ]
+        }, {
+          "@type" : "C_COMPLEX_OBJECT",
+          "rmTypeName" : "ISM_TRANSITION",
+          "occurrences" : "0..0",
+          "nodeId" : "at0026.1",
+          "attributes" : [ {
+            "@type" : "C_ATTRIBUTE",
+            "rmAttributeName" : "current_state",
+            "children" : [ {
+              "@type" : "C_COMPLEX_OBJECT",
+              "rmTypeName" : "DV_CODED_TEXT",
+              "attributes" : [ {
+                "@type" : "C_ATTRIBUTE",
+                "rmAttributeName" : "defining_code",
+                "children" : [ {
+                  "@type" : "C_TERMINOLOGY_CODE",
+                  "rmTypeName" : "CODE_PHRASE",
+                  "occurrences" : "1..1",
+                  "terminologyId" : {
+                    "value" : "openehr"
+                  },
+                  "constraint" : [ "526" ]
+                } ]
+              } ],
+              "attributeTuples" : [ ]
+            } ]
+          }, {
+            "@type" : "C_ATTRIBUTE",
+            "rmAttributeName" : "careflow_step",
+            "children" : [ {
+              "@type" : "C_COMPLEX_OBJECT",
+              "rmTypeName" : "DV_CODED_TEXT",
+              "attributes" : [ {
+                "@type" : "C_ATTRIBUTE",
+                "rmAttributeName" : "defining_code",
+                "children" : [ {
+                  "@type" : "C_TERMINOLOGY_CODE",
+                  "rmTypeName" : "CODE_PHRASE",
+                  "occurrences" : "1..1",
+                  "terminologyId" : {
+                    "value" : "local"
+                  },
+                  "constraint" : [ "at0026" ]
+                } ]
+              } ],
+              "attributeTuples" : [ ]
+            } ]
+          } ],
+          "attributeTuples" : [ ]
+        }, {
+          "@type" : "C_COMPLEX_OBJECT",
+          "rmTypeName" : "ISM_TRANSITION",
+          "occurrences" : "0..0",
+          "nodeId" : "at0035.1",
+          "attributes" : [ {
+            "@type" : "C_ATTRIBUTE",
+            "rmAttributeName" : "current_state",
+            "children" : [ {
+              "@type" : "C_COMPLEX_OBJECT",
+              "rmTypeName" : "DV_CODED_TEXT",
+              "attributes" : [ {
+                "@type" : "C_ATTRIBUTE",
+                "rmAttributeName" : "defining_code",
+                "children" : [ {
+                  "@type" : "C_TERMINOLOGY_CODE",
+                  "rmTypeName" : "CODE_PHRASE",
+                  "occurrences" : "1..1",
+                  "terminologyId" : {
+                    "value" : "openehr"
+                  },
+                  "constraint" : [ "526" ]
+                } ]
+              } ],
+              "attributeTuples" : [ ]
+            } ]
+          }, {
+            "@type" : "C_ATTRIBUTE",
+            "rmAttributeName" : "careflow_step",
+            "children" : [ {
+              "@type" : "C_COMPLEX_OBJECT",
+              "rmTypeName" : "DV_CODED_TEXT",
+              "attributes" : [ {
+                "@type" : "C_ATTRIBUTE",
+                "rmAttributeName" : "defining_code",
+                "children" : [ {
+                  "@type" : "C_TERMINOLOGY_CODE",
+                  "rmTypeName" : "CODE_PHRASE",
+                  "occurrences" : "1..1",
+                  "terminologyId" : {
+                    "value" : "local"
+                  },
+                  "constraint" : [ "at0035" ]
+                } ]
+              } ],
+              "attributeTuples" : [ ]
+            } ]
+          } ],
+          "attributeTuples" : [ ]
+        }, {
+          "@type" : "C_COMPLEX_OBJECT",
+          "rmTypeName" : "ISM_TRANSITION",
+          "occurrences" : "0..0",
+          "nodeId" : "at0008.1",
+          "attributes" : [ {
+            "@type" : "C_ATTRIBUTE",
+            "rmAttributeName" : "current_state",
+            "children" : [ {
+              "@type" : "C_COMPLEX_OBJECT",
+              "rmTypeName" : "DV_CODED_TEXT",
+              "attributes" : [ {
+                "@type" : "C_ATTRIBUTE",
+                "rmAttributeName" : "defining_code",
+                "children" : [ {
+                  "@type" : "C_TERMINOLOGY_CODE",
+                  "rmTypeName" : "CODE_PHRASE",
+                  "occurrences" : "1..1",
+                  "terminologyId" : {
+                    "value" : "openehr"
+                  },
+                  "constraint" : [ "527" ]
+                } ]
+              } ],
+              "attributeTuples" : [ ]
+            } ]
+          }, {
+            "@type" : "C_ATTRIBUTE",
+            "rmAttributeName" : "careflow_step",
+            "children" : [ {
+              "@type" : "C_COMPLEX_OBJECT",
+              "rmTypeName" : "DV_CODED_TEXT",
+              "attributes" : [ {
+                "@type" : "C_ATTRIBUTE",
+                "rmAttributeName" : "defining_code",
+                "children" : [ {
+                  "@type" : "C_TERMINOLOGY_CODE",
+                  "rmTypeName" : "CODE_PHRASE",
+                  "occurrences" : "1..1",
+                  "terminologyId" : {
+                    "value" : "local"
+                  },
+                  "constraint" : [ "at0008" ]
+                } ]
+              } ],
+              "attributeTuples" : [ ]
+            } ]
+          } ],
+          "attributeTuples" : [ ]
+        }, {
+          "@type" : "C_COMPLEX_OBJECT",
+          "rmTypeName" : "ISM_TRANSITION",
+          "occurrences" : "0..0",
+          "nodeId" : "at0009.1",
+          "attributes" : [ {
+            "@type" : "C_ATTRIBUTE",
+            "rmAttributeName" : "current_state",
+            "children" : [ {
+              "@type" : "C_COMPLEX_OBJECT",
+              "rmTypeName" : "DV_CODED_TEXT",
+              "attributes" : [ {
+                "@type" : "C_ATTRIBUTE",
+                "rmAttributeName" : "defining_code",
+                "children" : [ {
+                  "@type" : "C_TERMINOLOGY_CODE",
+                  "rmTypeName" : "CODE_PHRASE",
+                  "occurrences" : "1..1",
+                  "terminologyId" : {
+                    "value" : "openehr"
+                  },
+                  "constraint" : [ "528" ]
+                } ]
+              } ],
+              "attributeTuples" : [ ]
+            } ]
+          }, {
+            "@type" : "C_ATTRIBUTE",
+            "rmAttributeName" : "careflow_step",
+            "children" : [ {
+              "@type" : "C_COMPLEX_OBJECT",
+              "rmTypeName" : "DV_CODED_TEXT",
+              "attributes" : [ {
+                "@type" : "C_ATTRIBUTE",
+                "rmAttributeName" : "defining_code",
+                "children" : [ {
+                  "@type" : "C_TERMINOLOGY_CODE",
+                  "rmTypeName" : "CODE_PHRASE",
+                  "occurrences" : "1..1",
+                  "terminologyId" : {
+                    "value" : "local"
+                  },
+                  "constraint" : [ "at0009" ]
+                } ]
+              } ],
+              "attributeTuples" : [ ]
+            } ]
+          } ],
+          "attributeTuples" : [ ]
+        }, {
+          "@type" : "C_COMPLEX_OBJECT",
+          "rmTypeName" : "ISM_TRANSITION",
+          "occurrences" : "0..0",
+          "nodeId" : "at0003.1",
+          "attributes" : [ {
+            "@type" : "C_ATTRIBUTE",
+            "rmAttributeName" : "current_state",
+            "children" : [ {
+              "@type" : "C_COMPLEX_OBJECT",
+              "rmTypeName" : "DV_CODED_TEXT",
+              "attributes" : [ {
+                "@type" : "C_ATTRIBUTE",
+                "rmAttributeName" : "defining_code",
+                "children" : [ {
+                  "@type" : "C_TERMINOLOGY_CODE",
+                  "rmTypeName" : "CODE_PHRASE",
+                  "occurrences" : "1..1",
+                  "terminologyId" : {
+                    "value" : "openehr"
+                  },
+                  "constraint" : [ "529" ]
+                } ]
+              } ],
+              "attributeTuples" : [ ]
+            } ]
+          }, {
+            "@type" : "C_ATTRIBUTE",
+            "rmAttributeName" : "careflow_step",
+            "children" : [ {
+              "@type" : "C_COMPLEX_OBJECT",
+              "rmTypeName" : "DV_CODED_TEXT",
+              "attributes" : [ {
+                "@type" : "C_ATTRIBUTE",
+                "rmAttributeName" : "defining_code",
+                "children" : [ {
+                  "@type" : "C_TERMINOLOGY_CODE",
+                  "rmTypeName" : "CODE_PHRASE",
+                  "occurrences" : "1..1",
+                  "terminologyId" : {
+                    "value" : "local"
+                  },
+                  "constraint" : [ "at0003" ]
+                } ]
+              } ],
+              "attributeTuples" : [ ]
+            } ]
+          } ],
+          "attributeTuples" : [ ]
+        }, {
+          "@type" : "C_COMPLEX_OBJECT",
+          "rmTypeName" : "ISM_TRANSITION",
+          "occurrences" : "0..0",
+          "nodeId" : "at0004.1",
+          "attributes" : [ {
+            "@type" : "C_ATTRIBUTE",
+            "rmAttributeName" : "current_state",
+            "children" : [ {
+              "@type" : "C_COMPLEX_OBJECT",
+              "rmTypeName" : "DV_CODED_TEXT",
+              "attributes" : [ {
+                "@type" : "C_ATTRIBUTE",
+                "rmAttributeName" : "defining_code",
+                "children" : [ {
+                  "@type" : "C_TERMINOLOGY_CODE",
+                  "rmTypeName" : "CODE_PHRASE",
+                  "occurrences" : "1..1",
+                  "terminologyId" : {
+                    "value" : "openehr"
+                  },
+                  "constraint" : [ "245" ]
+                } ]
+              } ],
+              "attributeTuples" : [ ]
+            } ]
+          }, {
+            "@type" : "C_ATTRIBUTE",
+            "rmAttributeName" : "careflow_step",
+            "children" : [ {
+              "@type" : "C_COMPLEX_OBJECT",
+              "rmTypeName" : "DV_CODED_TEXT",
+              "attributes" : [ {
+                "@type" : "C_ATTRIBUTE",
+                "rmAttributeName" : "defining_code",
+                "children" : [ {
+                  "@type" : "C_TERMINOLOGY_CODE",
+                  "rmTypeName" : "CODE_PHRASE",
+                  "occurrences" : "1..1",
+                  "terminologyId" : {
+                    "value" : "local"
+                  },
+                  "constraint" : [ "at0004" ]
+                } ]
+              } ],
+              "attributeTuples" : [ ]
+            } ]
+          } ],
+          "attributeTuples" : [ ]
+        }, {
+          "@type" : "C_COMPLEX_OBJECT",
+          "rmTypeName" : "ISM_TRANSITION",
+          "occurrences" : "0..0",
+          "nodeId" : "at0010.1",
+          "attributes" : [ {
+            "@type" : "C_ATTRIBUTE",
+            "rmAttributeName" : "current_state",
+            "children" : [ {
+              "@type" : "C_COMPLEX_OBJECT",
+              "rmTypeName" : "DV_CODED_TEXT",
+              "attributes" : [ {
+                "@type" : "C_ATTRIBUTE",
+                "rmAttributeName" : "defining_code",
+                "children" : [ {
+                  "@type" : "C_TERMINOLOGY_CODE",
+                  "rmTypeName" : "CODE_PHRASE",
+                  "occurrences" : "1..1",
+                  "terminologyId" : {
+                    "value" : "openehr"
+                  },
+                  "constraint" : [ "530" ]
+                } ]
+              } ],
+              "attributeTuples" : [ ]
+            } ]
+          }, {
+            "@type" : "C_ATTRIBUTE",
+            "rmAttributeName" : "careflow_step",
+            "children" : [ {
+              "@type" : "C_COMPLEX_OBJECT",
+              "rmTypeName" : "DV_CODED_TEXT",
+              "attributes" : [ {
+                "@type" : "C_ATTRIBUTE",
+                "rmAttributeName" : "defining_code",
+                "children" : [ {
+                  "@type" : "C_TERMINOLOGY_CODE",
+                  "rmTypeName" : "CODE_PHRASE",
+                  "occurrences" : "1..1",
+                  "terminologyId" : {
+                    "value" : "local"
+                  },
+                  "constraint" : [ "at0010" ]
+                } ]
+              } ],
+              "attributeTuples" : [ ]
+            } ]
+          } ],
+          "attributeTuples" : [ ]
+        }, {
+          "@type" : "C_COMPLEX_OBJECT",
+          "rmTypeName" : "ISM_TRANSITION",
+          "occurrences" : "0..0",
+          "nodeId" : "at0006.1",
+          "attributes" : [ {
+            "@type" : "C_ATTRIBUTE",
+            "rmAttributeName" : "current_state",
+            "children" : [ {
+              "@type" : "C_COMPLEX_OBJECT",
+              "rmTypeName" : "DV_CODED_TEXT",
+              "attributes" : [ {
+                "@type" : "C_ATTRIBUTE",
+                "rmAttributeName" : "defining_code",
+                "children" : [ {
+                  "@type" : "C_TERMINOLOGY_CODE",
+                  "rmTypeName" : "CODE_PHRASE",
+                  "occurrences" : "1..1",
+                  "terminologyId" : {
+                    "value" : "openehr"
+                  },
+                  "constraint" : [ "531" ]
+                } ]
+              } ],
+              "attributeTuples" : [ ]
+            } ]
+          }, {
+            "@type" : "C_ATTRIBUTE",
+            "rmAttributeName" : "careflow_step",
+            "children" : [ {
+              "@type" : "C_COMPLEX_OBJECT",
+              "rmTypeName" : "DV_CODED_TEXT",
+              "attributes" : [ {
+                "@type" : "C_ATTRIBUTE",
+                "rmAttributeName" : "defining_code",
+                "children" : [ {
+                  "@type" : "C_TERMINOLOGY_CODE",
+                  "rmTypeName" : "CODE_PHRASE",
+                  "occurrences" : "1..1",
+                  "terminologyId" : {
+                    "value" : "local"
+                  },
+                  "constraint" : [ "at0006" ]
+                } ]
+              } ],
+              "attributeTuples" : [ ]
+            } ]
+          } ],
+          "attributeTuples" : [ ]
+        }, {
+          "@type" : "C_COMPLEX_OBJECT",
+          "rmTypeName" : "ISM_TRANSITION",
+          "occurrences" : "0..0",
+          "nodeId" : "at0023.1",
+          "attributes" : [ {
+            "@type" : "C_ATTRIBUTE",
+            "rmAttributeName" : "current_state",
+            "children" : [ {
+              "@type" : "C_COMPLEX_OBJECT",
+              "rmTypeName" : "DV_CODED_TEXT",
+              "attributes" : [ {
+                "@type" : "C_ATTRIBUTE",
+                "rmAttributeName" : "defining_code",
+                "children" : [ {
+                  "@type" : "C_TERMINOLOGY_CODE",
+                  "rmTypeName" : "CODE_PHRASE",
+                  "occurrences" : "1..1",
+                  "terminologyId" : {
+                    "value" : "openehr"
+                  },
+                  "constraint" : [ "533" ]
+                } ]
+              } ],
+              "attributeTuples" : [ ]
+            } ]
+          }, {
+            "@type" : "C_ATTRIBUTE",
+            "rmAttributeName" : "careflow_step",
+            "children" : [ {
+              "@type" : "C_COMPLEX_OBJECT",
+              "rmTypeName" : "DV_CODED_TEXT",
+              "attributes" : [ {
+                "@type" : "C_ATTRIBUTE",
+                "rmAttributeName" : "defining_code",
+                "children" : [ {
+                  "@type" : "C_TERMINOLOGY_CODE",
+                  "rmTypeName" : "CODE_PHRASE",
+                  "occurrences" : "1..1",
+                  "terminologyId" : {
+                    "value" : "local"
+                  },
+                  "constraint" : [ "at0023" ]
+                } ]
+              } ],
+              "attributeTuples" : [ ]
+            } ]
+          } ],
+          "attributeTuples" : [ ]
+        } ]
+      }, {
+        "@type" : "C_ATTRIBUTE",
+        "rmAttributeName" : "description",
+        "children" : [ {
+          "@type" : "C_COMPLEX_OBJECT",
+          "rmTypeName" : "ITEM_TREE",
+          "nodeId" : "at0001",
+          "attributes" : [ {
+            "@type" : "C_ATTRIBUTE",
+            "rmAttributeName" : "items",
+            "children" : [ {
+              "@type" : "C_COMPLEX_OBJECT",
+              "rmTypeName" : "ELEMENT",
+              "nodeId" : "at0011.1",
+              "attributes" : [ {
+                "@type" : "C_ATTRIBUTE",
+                "rmAttributeName" : "value",
+                "children" : [ {
+                  "@type" : "C_COMPLEX_OBJECT",
+                  "rmTypeName" : "DV_TEXT",
+                  "attributes" : [ {
+                    "@type" : "C_ATTRIBUTE",
+                    "rmAttributeName" : "value",
+                    "children" : [ {
+                      "@type" : "C_STRING",
+                      "rmTypeName" : "STRING",
+                      "constraint" : [ "ReSPECT - clinician signature", "ReSPECT - senior responsible clinician signature" ]
+                    } ]
+                  } ],
+                  "attributeTuples" : [ ]
+                } ]
+              } ],
+              "attributeTuples" : [ ]
+            }, {
+              "@type" : "C_COMPLEX_OBJECT",
+              "rmTypeName" : "ELEMENT",
+              "occurrences" : "0..0",
+              "nodeId" : "at0014.1",
+              "attributes" : [ ],
+              "attributeTuples" : [ ]
+            }, {
+              "@type" : "C_COMPLEX_OBJECT",
+              "rmTypeName" : "ELEMENT",
+              "occurrences" : "0..0",
+              "nodeId" : "at0013.1",
+              "attributes" : [ ],
+              "attributeTuples" : [ ]
+            }, {
+              "@type" : "ARCHETYPE_SLOT",
+              "rmTypeName" : "CLUSTER",
+              "occurrences" : "0..*",
+              "nodeId" : "at0027.1",
+              "includes" : [ {
+                "@type" : "ASSERTION",
+                "stringExpression" : "archetype_id/value matches {/.*/}",
+                "expression" : {
+                  "@type" : "BINARY_OPERATOR",
+                  "type" : "BOOLEAN",
+                  "operator" : "matches",
+                  "leftOperand" : {
+                    "@type" : "MODEL_REFERENCE",
+                    "type" : "STRING",
+                    "precedenceOverriden" : false,
+                    "referenceType" : "Attribute",
+                    "path" : "archetype_id/value"
+                  },
+                  "rightOperand" : {
+                    "@type" : "CONSTRAINT",
+                    "type" : "STRING",
+                    "precedenceOverriden" : false,
+                    "referenceType" : "Constraint",
+                    "item" : {
+                      "@type" : "C_STRING",
+                      "constraint" : [ "/.*/" ]
+                    }
+                  },
+                  "precedenceOverriden" : false
+                },
+                "variables" : [ ]
+              } ],
+              "excludes" : [ ],
+              "closed" : false
+            }, {
+              "@type" : "C_COMPLEX_OBJECT",
+              "rmTypeName" : "ELEMENT",
+              "occurrences" : "0..0",
+              "nodeId" : "at0032.1",
+              "attributes" : [ {
+                "@type" : "C_ATTRIBUTE",
+                "rmAttributeName" : "value",
+                "children" : [ {
+                  "@type" : "C_COMPLEX_OBJECT",
+                  "rmTypeName" : "DV_DATE_TIME",
+                  "attributes" : [ ],
+                  "attributeTuples" : [ ]
+                }, {
+                  "@type" : "C_COMPLEX_OBJECT",
+                  "rmTypeName" : "DV_INTERVAL<DV_DATE_TIME>",
+                  "attributes" : [ ],
+                  "attributeTuples" : [ ]
+                }, {
+                  "@type" : "C_COMPLEX_OBJECT",
+                  "rmTypeName" : "DV_DURATION",
+                  "attributes" : [ ],
+                  "attributeTuples" : [ ]
+                }, {
+                  "@type" : "C_COMPLEX_OBJECT",
+                  "rmTypeName" : "DV_INTERVAL<DV_DURATION>",
+                  "attributes" : [ ],
+                  "attributeTuples" : [ ]
+                }, {
+                  "@type" : "C_COMPLEX_OBJECT",
+                  "rmTypeName" : "DV_TEXT",
+                  "attributes" : [ ],
+                  "attributeTuples" : [ ]
+                } ]
+              } ],
+              "attributeTuples" : [ ]
+            }, {
+              "@type" : "C_COMPLEX_OBJECT",
+              "rmTypeName" : "ELEMENT",
+              "occurrences" : "0..0",
+              "nodeId" : "at0025.1",
+              "attributes" : [ {
+                "@type" : "C_ATTRIBUTE",
+                "rmAttributeName" : "value",
+                "children" : [ {
+                  "@type" : "C_COMPLEX_OBJECT",
+                  "rmTypeName" : "DV_DATE_TIME",
+                  "attributes" : [ ],
+                  "attributeTuples" : [ ]
+                } ]
+              } ],
+              "attributeTuples" : [ ]
+            }, {
+              "@type" : "C_COMPLEX_OBJECT",
+              "rmTypeName" : "ELEMENT",
+              "occurrences" : "0..0",
+              "nodeId" : "at0021.1",
+              "attributes" : [ {
+                "@type" : "C_ATTRIBUTE",
+                "rmAttributeName" : "value",
+                "children" : [ {
+                  "@type" : "C_COMPLEX_OBJECT",
+                  "rmTypeName" : "DV_COUNT",
+                  "attributes" : [ {
+                    "@type" : "C_ATTRIBUTE",
+                    "rmAttributeName" : "magnitude",
+                    "children" : [ {
+                      "@type" : "C_INTEGER",
+                      "rmTypeName" : "INTEGER",
+                      "occurrences" : "1..1",
+                      "constraint" : [ {
+                        "lower" : 1,
+                        "lowerIncluded" : true,
+                        "upperIncluded" : false,
+                        "lowerUnbounded" : false,
+                        "upperUnbounded" : true
+                      } ]
+                    } ]
+                  } ],
+                  "attributeTuples" : [ ]
+                } ]
+              } ],
+              "attributeTuples" : [ ]
+            }, {
+              "@type" : "ARCHETYPE_SLOT",
+              "rmTypeName" : "CLUSTER",
+              "occurrences" : "0..*",
+              "nodeId" : "at0029.1",
+              "includes" : [ {
+                "@type" : "ASSERTION",
+                "stringExpression" : "archetype_id/value matches {/openEHR-EHR-CLUSTER\\.media_file(-[a-zA-Z0-9_]+)*\\.v1/}",
+                "expression" : {
+                  "@type" : "BINARY_OPERATOR",
+                  "type" : "BOOLEAN",
+                  "operator" : "matches",
+                  "leftOperand" : {
+                    "@type" : "MODEL_REFERENCE",
+                    "type" : "STRING",
+                    "precedenceOverriden" : false,
+                    "referenceType" : "Attribute",
+                    "path" : "archetype_id/value"
+                  },
+                  "rightOperand" : {
+                    "@type" : "CONSTRAINT",
+                    "type" : "STRING",
+                    "precedenceOverriden" : false,
+                    "referenceType" : "Constraint",
+                    "item" : {
+                      "@type" : "C_STRING",
+                      "constraint" : [ "/openEHR-EHR-CLUSTER\\.media_file(-[a-zA-Z0-9_]+)*\\.v1/" ]
+                    }
+                  },
+                  "precedenceOverriden" : false
+                },
+                "variables" : [ ]
+              } ],
+              "excludes" : [ ],
+              "closed" : false
+            }, {
+              "@type" : "C_COMPLEX_OBJECT",
+              "rmTypeName" : "ELEMENT",
+              "occurrences" : "0..0",
+              "nodeId" : "at0012.1",
+              "attributes" : [ ],
+              "attributeTuples" : [ ]
+            }, {
+              "@type" : "ARCHETYPE_SLOT",
+              "rmTypeName" : "CLUSTER",
+              "occurrences" : "0..*",
+              "nodeId" : "at0036.1",
+              "includes" : [ {
+                "@type" : "ASSERTION",
+                "stringExpression" : "archetype_id/value matches {/.*/}",
+                "expression" : {
+                  "@type" : "BINARY_OPERATOR",
+                  "type" : "BOOLEAN",
+                  "operator" : "matches",
+                  "leftOperand" : {
+                    "@type" : "MODEL_REFERENCE",
+                    "type" : "STRING",
+                    "precedenceOverriden" : false,
+                    "referenceType" : "Attribute",
+                    "path" : "archetype_id/value"
+                  },
+                  "rightOperand" : {
+                    "@type" : "CONSTRAINT",
+                    "type" : "STRING",
+                    "precedenceOverriden" : false,
+                    "referenceType" : "Constraint",
+                    "item" : {
+                      "@type" : "C_STRING",
+                      "constraint" : [ "/.*/" ]
+                    }
+                  },
+                  "precedenceOverriden" : false
+                },
+                "variables" : [ ]
+              } ],
+              "excludes" : [ ],
+              "closed" : false
+            }, {
+              "@type" : "C_COMPLEX_OBJECT",
+              "rmTypeName" : "ELEMENT",
+              "occurrences" : "0..0",
+              "nodeId" : "at0028.1",
+              "attributes" : [ ],
+              "attributeTuples" : [ ]
+            } ]
+          } ],
+          "attributeTuples" : [ ]
+        } ]
+      }, {
+        "@type" : "C_ATTRIBUTE",
+        "rmAttributeName" : "protocol",
+        "children" : [ {
+          "@type" : "C_COMPLEX_OBJECT",
+          "rmTypeName" : "ITEM_TREE",
+          "nodeId" : "at0015",
+          "attributes" : [ {
+            "@type" : "C_ATTRIBUTE",
+            "rmAttributeName" : "items",
+            "children" : [ {
+              "@type" : "C_COMPLEX_OBJECT",
+              "rmTypeName" : "ELEMENT",
+              "occurrences" : "0..0",
+              "nodeId" : "at0016.1",
+              "attributes" : [ {
+                "@type" : "C_ATTRIBUTE",
+                "rmAttributeName" : "value",
+                "children" : [ {
+                  "@type" : "C_COMPLEX_OBJECT",
+                  "rmTypeName" : "DV_IDENTIFIER",
+                  "defaultValue" : {
+                    "@type" : "DV_IDENTIFIER"
+                  },
+                  "attributes" : [ ],
+                  "attributeTuples" : [ ]
+                }, {
+                  "@type" : "C_COMPLEX_OBJECT",
+                  "rmTypeName" : "DV_TEXT",
+                  "attributes" : [ ],
+                  "attributeTuples" : [ ]
+                } ]
+              } ],
+              "attributeTuples" : [ ]
+            }, {
+              "@type" : "C_COMPLEX_OBJECT",
+              "rmTypeName" : "ELEMENT",
+              "occurrences" : "0..0",
+              "nodeId" : "at0018.1",
+              "attributes" : [ {
+                "@type" : "C_ATTRIBUTE",
+                "rmAttributeName" : "value",
+                "children" : [ {
+                  "@type" : "C_COMPLEX_OBJECT",
+                  "rmTypeName" : "DV_IDENTIFIER",
+                  "defaultValue" : {
+                    "@type" : "DV_IDENTIFIER"
+                  },
+                  "attributes" : [ ],
+                  "attributeTuples" : [ ]
+                }, {
+                  "@type" : "C_COMPLEX_OBJECT",
+                  "rmTypeName" : "DV_TEXT",
+                  "attributes" : [ ],
+                  "attributeTuples" : [ ]
+                } ]
+              } ],
+              "attributeTuples" : [ ]
+            } ]
+          } ],
+          "attributeTuples" : [ ]
+        } ]
+      } ],
+      "attributeTuples" : [ ]
+    },
+    "terminology" : {
+      "@type" : "ARCHETYPE_TERMINOLOGY",
+      "conceptCode" : "at0000",
+      "termDefinitions" : {
+        "en" : {
+          "at0000.1" : {
+            "@type" : "ARCHETYPE_TERM",
+            "code" : "at0000.1",
+            "text" : "Clinician signature",
+            "description" : "A simple health-related service or activity delivered by a clinician, organisation or agency."
+          }
+        },
         "pt-br" : { },
         "de" : { },
         "nb" : { },
