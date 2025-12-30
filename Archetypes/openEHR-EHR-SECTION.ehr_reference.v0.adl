@@ -1,4 +1,4 @@
-archetype (adl_version=1.4; uid=54134d5a-b509-43bb-80f1-f6b66c17fc53)
+archetype (adl_version=1.4; uid=cc517d67-a426-4659-bfc9-af16c32e3321)
 	openEHR-EHR-SECTION.ehr_reference.v0
 
 concept
@@ -19,17 +19,18 @@ description
 		["en"] = <
 			language = <[ISO_639-1::en]>
 			purpose = <"Being used as a section divider in ReSPECT">
-			copyright = <"© Apperta Foundation">
+			copyright = <"© Apperta Foundation, NHS Education for Scotland">
 		>
 	>
 	other_details = <
 		["licence"] = <"This work is licensed under the Creative Commons Attribution-ShareAlike 4.0 License. To view a copy of this license, visit http://creativecommons.org/licenses/by-sa/4.0/.">
-		["custodian_organisation"] = <"Apperta UK">
-		["original_namespace"] = <"uk.org.clinicalmodels">
-		["original_publisher"] = <"Apperta UK">
-		["custodian_namespace"] = <"uk.org.clinicalmodels">
-		["MD5-CAM-1.0.1"] = <"8BA689EAFD659F82F338978DA0D52814">
-		["build_uid"] = <"cc3ad1bb-fbc5-4b58-9540-84afd2556245">
+		["custodian_organisation"] = <"NHS Education for Scotland">
+		["references"] = <"Derived from: <Add reference to original resource here>">
+		["original_namespace"] = <"scot.nhs.models">
+		["original_publisher"] = <"NHS Education for Scotland">
+		["custodian_namespace"] = <"scot.nhs.models">
+		["MD5-CAM-1.0.1"] = <"054A94209CABEA359D02D8AEEF122B9C">
+		["build_uid"] = <"8bec992b-fc55-4860-b571-687170a2dd84">
 		["revision"] = <"0.0.1-alpha">
 	>
 
