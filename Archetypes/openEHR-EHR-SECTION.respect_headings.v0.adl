@@ -1,4 +1,4 @@
-archetype (adl_version=1.4; uid=2dc7a3b9-54ad-46e2-a51d-0fd7783ac0ae)
+archetype (adl_version=1.4; uid=bc651e5d-1506-40c9-89ad-1e2c6c12d5e7)
 	openEHR-EHR-SECTION.respect_headings.v0
 
 concept
@@ -19,19 +19,20 @@ description
 		["en"] = <
 			language = <[ISO_639-1::en]>
 			purpose = <"To provide an overall heading for the recording of details of ReSPECT process.">
-			copyright = <"© Clinical Models UK">
+			copyright = <"© Clinical Models UK, NHS Education for Scotland">
 			use = <"Use as an overall heading for the recording of details of ReSPECT process.">
 		>
 	>
 	other_details = <
 		["licence"] = <"This work is licensed under the Creative Commons Attribution-ShareAlike 3.0 License. To view a copy of this license, visit http://creativecommons.org/licenses/by-sa/3.0/.">
-		["custodian_organisation"] = <"UK Clinical Models">
+		["custodian_organisation"] = <"NHS Education for Scotland">
+		["references"] = <"Derived from: <Add reference to original resource here>">
 		["current_contact"] = <"Hildegard Franke, freshEHR Clinical Informatics Ltd.<hildi@freshehr.com>">
-		["original_namespace"] = <"uk.org.clinicalmodels">
-		["original_publisher"] = <"UK Clinical Models">
-		["custodian_namespace"] = <"uk.org.clinicalmodels">
-		["MD5-CAM-1.0.1"] = <"2E0AA632D4E2F4960CA7B1F13AE680C9">
-		["build_uid"] = <"6f6456c0-39da-4d31-aec2-f1ef2c3d1804">
+		["original_namespace"] = <"scot.nhs.models">
+		["original_publisher"] = <"NHS Education for Scotland">
+		["custodian_namespace"] = <"scot.nhs.models">
+		["MD5-CAM-1.0.1"] = <"6BB600AEE958207C392C2ADCC01E5131">
+		["build_uid"] = <"619f019d-b014-483c-b6e3-8fd9c433f872">
 		["revision"] = <"0.0.1-alpha">
 	>
 
