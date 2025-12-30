@@ -28,11 +28,11 @@
       "Sign off" : "",
       "Speciality" : "",
       "User roles" : "",
-      "MD5-CAM-1.0.1" : "e4ea16b3e3206add64ed6b2e3435e05b",
+      "MD5-CAM-1.0.1" : "1a81a5f34d9f155348026edba0f15bf5",
       "PARENT:MD5-CAM-1.0.1" : "DE0723367AA22BB716CEC5342B21FF60",
       "Template semVer" : "0.2.0",
       "ReSPECT Version" : "3.0.0-published",
-      "sem_ver" : "2.0.0",
+      "sem_ver" : "3.0.0",
       "build_uid" : "",
       "original_language" : "ISO_639-1::en"
     },
@@ -3969,7 +3969,7 @@
       "references" : { },
       "conversionDetails" : { },
       "otherDetails" : {
-        "PARENT:MD5-CAM-1.0.1" : "5A59DA00389D4E8C809601FE170F2480"
+        "PARENT:MD5-CAM-1.0.1" : "AFF74BEFCC7CCF00C27AC86349A267CB"
       },
       "details" : {
         "en" : {
@@ -4066,7 +4066,7 @@
       "references" : { },
       "conversionDetails" : { },
       "otherDetails" : {
-        "PARENT:MD5-CAM-1.0.1" : "86D95E88A12580A647DAE690595D0685"
+        "PARENT:MD5-CAM-1.0.1" : "F2C1DD6819F51C5D167E35E25EE324FA"
       },
       "details" : {
         "en" : {
