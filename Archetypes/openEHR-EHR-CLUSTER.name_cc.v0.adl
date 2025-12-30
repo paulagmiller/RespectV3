@@ -1,4 +1,4 @@
-archetype (adl_version=1.4; uid=6f4c3f44-aaed-455b-bc65-716f325ba32d)
+archetype (adl_version=1.4; uid=e4f5b5a0-b437-42cf-b03b-2fa6725a2300)
 	openEHR-EHR-CLUSTER.name_cc.v0
 
 concept
@@ -19,19 +19,24 @@ description
 		["en"] = <
 			language = <[ISO_639-1::en]>
 			purpose = <"For the recording of name details aligned with corresponding FHIR resource.">
+			copyright = <"© NHS Education for Scotland">
 			use = <"Use to record name details aligned with the corresponding FHIR resources.
 
 This cluster archetype is intended to be used inside FHIR resource aligned archetypes such as CLUSTER.fhir_contact.v0 and CLUSTER.fhir_practitioner.v0.">
 		>
 	>
 	other_details = <
-		["licence"] = <"This work is licensed under the Creative Commons Attribution-ShareAlike 3.0 License. To view a copy of this license, visit http://creativecommons.org/licenses/by-sa/3.0/.">
+		["licence"] = <"This work is licensed under the Creative Commons Attribution-ShareAlike 4.0 International License. To view a copy of this license, visit http://creativecommons.org/licenses/by-sa/4.0/.">
+		["custodian_organisation"] = <"NHS Education for Scotland">
 		["references"] = <"https://fhir.hl7.org.uk/STU3/StructureDefinition/CareConnect-Patient-1 cited 19-Jul-2018.
 
 https://fhir.hl7.org.uk/STU3/StructureDefinition/CareConnect-Practitioner-1 cited 19-Jul-2018.">
 		["current_contact"] = <"Hildegard McNicoll, freshEHR Clinical Informatics Ltd.<hildi@freshehr.com>">
-		["MD5-CAM-1.0.1"] = <"837216B3380EEE7CDC8C974E487FE65F">
-		["build_uid"] = <"68ccd8fd-6d1a-43e1-b8e9-95873687789d">
+		["original_namespace"] = <"scot.nhs.models">
+		["original_publisher"] = <"NHS Education for Scotland">
+		["custodian_namespace"] = <"scot.nhs.models">
+		["MD5-CAM-1.0.1"] = <"F18C1743769BC01C4E6A5EB777C1FC49">
+		["build_uid"] = <"859ddfec-f69a-45a2-8c50-21cf808fc0b2">
 		["revision"] = <"0.0.1-alpha">
 	>
 
